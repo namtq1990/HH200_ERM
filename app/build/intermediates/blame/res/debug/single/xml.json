@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\xml\\filepaths.xml",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\xml\\filepaths.xml"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\xml\\setting.xml",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\xml\\setting.xml"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\xml\\myfilter.xml",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\xml\\myfilter.xml"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\xml\\setting_headers.xml",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\xml\\setting_headers.xml"
+    }
+]

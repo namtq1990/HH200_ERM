@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<item android:id="@+id/Cancel_Menu" android:alphabeticShortcut="a"
+		android:title="@string/cancel" />
+	
+	
+<!--  <item android:title="Stabilization" android:id="@+id/stab_Menu"></item> -->
+
+</menu>

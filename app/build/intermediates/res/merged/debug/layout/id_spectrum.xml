@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+
+    <FrameLayout
+        android:id="@+id/frameLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="0" >
+
+        <view
+            android:id="@+id/IDspectrum"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="25dp"
+            class="android.HH100.Control.SpectrumView" />
+
+      
+
+        <SlidingDrawer
+            android:id="@+id/slidingDrawer1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="top"
+            android:content="@+id/content"
+            android:handle="@+id/handle" >
+
+            <TextView
+                android:id="@+id/handle"
+                android:layout_width="50dp"
+                android:layout_height="23dp"
+                android:background="@drawable/bar" />
+
+            <LinearLayout
+                android:id="@+id/content"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:background="#171615" >
+
+                <FrameLayout
+                    android:id="@+id/content1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent" >
+
+                    <view
+                        android:id="@+id/Iso_analysis"
+                        android:layout_width="fill_parent"
+                        android:layout_height="70dp"
+                        android:layout_gravity="top"
+                        class="android.HH100.Control.Analysis_TopInfor" />
+
+                    <ScrollView
+                        android:id="@+id/IsoScrView"
+                        android:layout_width="match_parent"
+                        android:layout_height="fill_parent"
+                        android:background="#171615"
+                        android:paddingTop="70dp" >
+
+                        <LinearLayout
+                            android:id="@+id/AdLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#171615"
+                            android:orientation="vertical" >
+                        </LinearLayout>
+                    </ScrollView>
+                </FrameLayout>
+            </LinearLayout>
+        </SlidingDrawer>
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/frameLayout2"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="right"
+        android:layout_weight="11"
+        android:background="#171615"
+        android:orientation="vertical"
+        android:visibility="visible" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:layout_weight="8"
+            android:text=""
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textSize="8sp" />
+
+        <Button
+            android:id="@+id/SecUpBtn"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:layout_weight="1"
+            android:background="@drawable/picker_top"
+            android:soundEffectsEnabled="true"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/ManualID_time"
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:layout_weight="1"
+            android:background="@drawable/picker_center"
+            android:gravity="center"
+            android:text="30"
+            android:textAlignment="center"
+            android:textColor="@color/Black"
+            android:textSize="17sp" />
+
+        <Button
+            android:id="@+id/SecDownBtn"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:layout_weight="1"
+            android:background="@drawable/picker_bottom"
+            android:soundEffectsEnabled="true"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:layout_weight="6"
+            android:text="" />
+
+        <Button
+            android:id="@+id/ManualID_Cancel"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:soundEffectsEnabled="true"
+            android:text="Cancel"
+            android:textSize="10sp" />
+    </LinearLayout>
+
+</LinearLayout>

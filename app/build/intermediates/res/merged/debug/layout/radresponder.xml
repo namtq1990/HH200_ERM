@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <ListView
+        android:id="@+id/radresponderList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:background="#484848"
+        android:layout_height="1dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:stackFromBottom="true"
+        android:weightSum="1">
+
+        <Button
+            android:layout_width="0dp"
+            android:id="@+id/cancel"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:text="Cancel"
+            android:textSize="18dp"
+            android:layout_weight="0.5" />
+
+        <ImageView
+            android:layout_width="1dp"
+            android:background="#484848"
+            android:layout_height="match_parent" />
+
+        <Button
+            android:layout_width="0dp"
+            android:background="@null"
+            android:text="Save"
+            android:id="@+id/next"
+            android:textSize="18dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5" />
+
+    </LinearLayout>
+</LinearLayout>

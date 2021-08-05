@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:example="http://schemas.android.com/apk/res/android.HH100.AlarmListpreference" >
+
+    <PreferenceCategory
+        android:key="@string/p_user_settings"
+        android:title="@string/user_settings" >
+        <EditTextPreference
+            android:defaultValue="@string/setup_user_default"
+            android:key="@string/user"
+            android:summary="@string/setup_summary_user"
+            android:title="@string/setup_title_user" >
+        </EditTextPreference>
+        <EditTextPreference
+            android:defaultValue="@string/setup_location_default"
+            android:key="@string/location"
+            android:summary="@string/setup_summary_search_location"
+            android:title="@string/setup_title_search_location" >
+        </EditTextPreference>
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="p_alarm_title"
+        android:title="@string/alarm" >
+        <android.HH100.Dialog.AlarmListpreference
+            android:defaultValue="0"
+            android:entries="@array/list_pref_alarm"
+            android:entryValues="@array/list_pref_alarm_value"
+            android:key="@string/alarm_list"
+            android:summary="@string/setup_summary_ringtone"
+            android:title="@string/setup_title_ringtone" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="p_measurement"
+        android:title="@string/measurement" >
+        <PreferenceScreen
+            android:key="SetBackgroundMeasurementMode"
+            android:summary="@string/background_measurement"
+            android:title="@string/background" >
+        </PreferenceScreen>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/about" >
+    </PreferenceCategory>
+
+    <PreferenceScreen
+        android:key="p_inform"
+        android:summary="@string/setup_summary_device_info"
+        android:title="@string/setup_title_device_info" >
+        <PreferenceCategory android:title="@string/setup_title_sw_version" >
+            <Preference
+                android:key="@string/app_version"
+                android:title="@string/setup_title_sw_version" >
+            </Preference>
+            <Preference
+                android:key="@string/p_sw_update"
+                android:summary="@string/down_new_version"
+                android:title="@string/down_new_version_summary" >
+            </Preference>
+        </PreferenceCategory>
+        <PreferenceCategory android:title="@string/setup_title_login_info" >
+            <Preference
+                android:defaultValue="null"
+                android:key="@string/last_user"
+                android:title="@string/setup_title_last_login" >
+            </Preference>
+            <Preference
+                android:defaultValue="null"
+                android:key="@string/last_time"
+                android:summary="2012.05.06  16:23"
+                android:title="@string/setup_title_last_login_date" >
+            </Preference>
+        </PreferenceCategory>
+        <PreferenceCategory android:title="@string/System_Log_Transfer_title" >
+            <PreferenceScreen
+                android:key="@string/System_Log_Transfer_Key"
+                android:title="@string/System_Log_Transfer" >
+            </PreferenceScreen>
+        </PreferenceCategory>
+        <PreferenceCategory android:title="@string/setup_title_last_paired" >
+            <Preference
+                android:defaultValue="null"
+                android:key="@string/last_detector"
+                android:title="@string/setup_title_last_paired" >
+            </Preference>
+        </PreferenceCategory>
+        <PreferenceCategory android:title="@string/CryStal_Type_title" >
+            <Preference
+                android:key="@string/CryStal_Type_Key"
+                android:summary="NULL"
+                android:title="@string/CryStal_Type_Sub_title" >
+            </Preference>
+        </PreferenceCategory>
+        <PreferenceCategory
+            android:key="p_measurement"
+            android:title="@string/initialization_title" >
+            <PreferenceScreen
+                android:key="@string/initialization_key"
+                android:summary="@string/initialization_title_summary"
+                android:title="@string/initialization_sub_title" >
+            </PreferenceScreen>
+        </PreferenceCategory>
+    </PreferenceScreen>
+
+    <PreferenceCategory android:title="@string/administrator_settings" >
+    </PreferenceCategory>
+
+    <PreferenceScreen
+        android:title="@string/password"
+        android:key="@string/menu_enable_key" />
+
+    <PreferenceScreen
+        android:key="@string/p_admin"
+        android:summary="@string/administrator_access"
+        android:title="@string/admin" >
+
+        <PreferenceCategory
+            android:title="@string/event_log" >
+            <PreferenceScreen
+                android:key="eventlog"
+                android:summary="@string/delete_eventlog_summary"
+                android:title="@string/delete_eventlog_title" />
+        </PreferenceCategory>
+
+        <PreferenceCategory
+            android:key="p_alarm_title"
+            android:title="@string/alarm" >
+            <PreferenceScreen
+                android:key="SetAlarmMode"
+                android:summary="@string/setup_summary_alarm_mode"
+                android:title="@string/setup_title_alarm_mode" >
+                <EditTextPreference
+                    android:defaultValue="1000"
+                    android:digits="0123456789"
+                    android:inputType="number|numberSigned|numberDecimal"
+                    android:key="@string/gamma_threshold"
+                    android:summary="@string/setup_summary_fix_alarm"
+                    android:title="@string/setup_title_fix_alarm" >
+                </EditTextPreference>
+                <EditTextPreference
+                    android:defaultValue="4"
+                    android:inputType="number|numberSigned|numberDecimal"
+                    android:key="@string/gamma_threshold_S"
+                    android:summary="@string/setup_summary_var_alarm"
+                    android:title="@string/setup_title_var_alarm" >
+                </EditTextPreference>
+            </PreferenceScreen>
+
+            <EditTextPreference
+                android:defaultValue="0.8"
+                android:digits="0123456789."
+                android:inputType="numberDecimal"
+                android:key="@string/neutron_threshold"
+                android:summary="@string/setup_summary_neu_threshold"
+                android:title="@string/setup_title_neu_threshold" />
+            <EditTextPreference
+                android:defaultValue="1000"
+                android:inputType="number"
+                android:key="@string/healthy_threshold"
+                android:summary="@string/setup_summary_health_thre"
+                android:title="@string/setup_title_health_thre" />
+        </PreferenceCategory>
+        <PreferenceCategory android:title="@string/discrimination" >
+            <PreferenceScreen
+                android:key="@string/p_disc"
+                android:summary="Setup Discimination"
+                android:title="@string/discrimination" >
+                <EditTextPreference
+                    android:defaultValue="0"
+                    android:inputType="number|numberSigned|numberDecimal"
+                    android:key="@string/p_low_discri"
+                    android:summary="@string/setup_summary_low_disc"
+                    android:title="@string/low_discrimination" >
+                </EditTextPreference>
+                <EditTextPreference
+                    android:defaultValue="1024"
+                    android:inputType="number|numberSigned|numberDecimal"
+                    android:key="@string/p_upper_discri"
+                    android:summary="@string/setup_summary_upper_disc"
+                    android:title="@string/upper_discrimination" >
+                </EditTextPreference>
+            </PreferenceScreen>
+        </PreferenceCategory>
+        <PreferenceCategory android:title="@string/background_measurement" >
+            <EditTextPreference
+                android:defaultValue="60"
+                android:inputType="number"
+                android:key="@string/bgsecond"
+                android:summary="@string/setup_summary_bg"
+                android:title="@string/setup_title_bg" >
+            </EditTextPreference>
+        </PreferenceCategory>
+        <PreferenceCategory android:title="@string/calibration" >
+            <EditTextPreference
+                android:defaultValue="200"
+                android:inputType="number"
+                android:key="@string/Calib_time"
+                android:summary="@string/setup_summary_cali"
+                android:title="@string/setup_title_cali" />
+        </PreferenceCategory>
+        <PreferenceCategory android:title="@string/manual_identification" >
+            <EditTextPreference
+                android:defaultValue="60"
+                android:digits="0123456789"
+                android:inputType="number|numberSigned|numberDecimal"
+                android:key="@string/p_manual_id_defalut"
+                android:summary="@string/setup_summary_default_time"
+                android:title="@string/setup_title_default_time" />
+            <EditTextPreference
+                android:defaultValue="10"
+                android:digits="0123456789"
+                android:inputType="number|numberSigned|numberDecimal"
+                android:key="@string/p_manual_id_adjust"
+                android:summary="@string/setup_summary_time_adjust"
+                android:title="@string/setup_title_time_adjust" />
+        </PreferenceCategory>
+        <PreferenceCategory android:title="@string/library" >
+            <android.HH100.Dialog.SaveBtnPreference
+                android:key="@string/IsoLib_List_Key"
+                android:summary="@string/setup_summary_lib"
+                android:title="@string/setup_title_lib" />
+        </PreferenceCategory>
+
+        <PreferenceCategory android:title="@string/unit" >
+            <android.HH100.Dialog.DoseratePreference
+                android:defaultValue="1"
+                android:entries="@array/list_dose_unit"
+                android:entryValues="@array/list_dose_unit_value"
+                android:key="@string/setup_dr_unit_key"
+                android:summary="@string/setup_summary_dr_unit"
+                android:title="@string/setup_title_dr_unit" />
+        </PreferenceCategory>
+        <PreferenceCategory android:title="@string/setup_title_export_event" />
+
+        <PreferenceScreen
+            android:key="@string/p_export_event"
+            android:summary="@string/setup_summary_export_event"
+            android:title="@string/e_mail_account" />
+
+        <PreferenceCategory android:title="Sequential Mode" >
+            <PreferenceScreen
+                android:key="@string/p_psrc_sequential"
+                android:summary="Setup Sequential Mode"
+                android:title="Sequential Mode" >
+                <CheckBoxPreference
+                    android:defaultValue="0"
+                    android:key="@string/p_sequence_mode_available"
+                    android:summary="@string/setup_summary_sequence_mode"
+                    android:title="@string/setup_title_sequence_mode" />
+
+                <EditTextPreference
+                    android:defaultValue="60"
+                    android:digits="0123456789"
+                    android:inputType="number|numberSigned|numberDecimal"
+                    android:key="@string/p_sequence_mode_acq_time"
+                    android:summary="@string/setup_summary_seq_measurement_time"
+                    android:title="@string/setup_title_seq_measurement_time" />
+                <EditTextPreference
+                    android:defaultValue="5"
+                    android:digits="0123456789"
+                    android:inputType="number|numberSigned|numberDecimal"
+                    android:key="@string/p_sequence_mode_pause_time"
+                    android:summary="@string/setup_summary_seq_pause_time"
+                    android:title="@string/setup_title_seq_pause_time" />
+                <EditTextPreference
+                    android:defaultValue="5"
+                    android:digits="0123456789"
+                    android:inputType="number|numberSigned|numberDecimal"
+                    android:key="@string/p_sequence_mode_repeat"
+                    android:summary="@string/setup_summary_sequence_mode_repeat"
+                    android:title="@string/setup_title_sequence_mode_repeat" />
+            </PreferenceScreen>
+        </PreferenceCategory>
+
+
+        <!--
+    <PreferenceCategory android:title="@string/mapping_server" >
+    <EditTextPreference
+        android:key="@string/p_server_ip"
+        android:summary="@string/server_ip"
+        android:title="@string/setup_server_ip"
+        android:inputType="number|numberDecimal"
+    	android:digits="0123456789."/>
+   </PreferenceCategory>
+
+        -->
+
+        <PreferenceCategory android:title="RADRESPONDER" />
+
+        <PreferenceScreen
+            android:key="@string/rad_response_option_key"
+            android:summary="@string/rad_response_option_summary"
+            android:title="@string/rad_response_option_title" >
+
+            <PreferenceCategory android:title="RADRESPONDER" />
+
+            <CheckBoxPreference
+                android:defaultValue="0"
+                android:key="@string/p_radresponder_mode_available"
+                android:summary="@string/rad_response_used_not_summary"
+                android:title="@string/rad_response_used_not_title" />
+
+            <!--            <android.HH100.Dialog.NextBtnPreference
+                            android:defaultValue="1"
+                            android:entries="@array/list_pref_eventlist3"
+                            android:entryValues="@array/list_pref_eventlist_value"
+                            android:key="@string/rad_response_eventlist_key"
+                            android:summary="@string/rad_response_eventlist_summary"
+                            android:title="@string/rad_response_eventlist_title" />-->
+
+            <PreferenceScreen
+                android:key="radresponder_sponsor"
+                android:summary="@string/rad_response_eventlist_summary1"
+                android:title="@string/rad_response_eventlist_title1"  >
+            </PreferenceScreen>
+
+
+            <PreferenceScreen
+                android:key="radresponder_event"
+                android:summary="@string/rad_response_eventlist_summary"
+                android:title="@string/rad_response_eventlist_title" >
+            </PreferenceScreen>
+
+
+        </PreferenceScreen>
+
+        <PreferenceCategory android:title="@string/Connect_Mode" >
+            <android.HH100.Dialog.SaveBtnPreference
+                android:defaultValue="0"
+                android:entries="@array/list_connect_mode_unit"
+                android:entryValues="@array/list_connect_mode_value"
+                android:key="@string/Connect_Mode_Key"
+                android:summary="@string/Setup_Connect_Mode"
+                android:title="@string/Connect_Mode" />
+        </PreferenceCategory>
+
+        <PreferenceCategory android:title="@string/admin_pw" >
+            <PreferenceScreen
+                android:defaultValue="1234"
+                android:key="@string/Admin_Password"
+                android:title="@string/password" />
+
+        </PreferenceCategory>
+
+        <PreferenceCategory
+            android:title="@string/measurement" >
+            <PreferenceScreen
+                android:key="SetCalibrationMode"
+                android:summary="@string/calibration_measurement"
+                android:title="@string/energy_calibration" >
+            </PreferenceScreen>
+        </PreferenceCategory>
+
+
+
+        <PreferenceScreen
+            android:key="@string/reset_Calibartion_key"
+            android:summary="@string/reset_Calibartion_title_summary"
+            android:title="@string/reset_Calibartion_sub_title" >
+        </PreferenceScreen>
+
+    </PreferenceScreen>
+
+</PreferenceScreen>

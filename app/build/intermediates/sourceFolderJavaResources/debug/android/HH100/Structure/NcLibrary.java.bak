@@ -1,0 +1,1832 @@
+package android.HH100.Structure;
+
+import java.io.*;
+import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
+import java.util.*;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
+import org.xmlpull.v1.XmlSerializer;
+
+import android.HH100.MainActivity;
+import android.HH100.MainService;
+import android.HH100.R;
+import android.HH100.Identification.Isotope;
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager.NameNotFoundException;
+import android.database.CursorJoiner.Result;
+import android.media.MediaPlayer;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.os.*;
+import android.preference.PreferenceManager;
+import android.provider.DocumentsContract.Document;
+import android.util.*;
+
+public class NcLibrary {
+
+	public static int pow(int x, int y){ // 제곱 계산
+    	int result = 1;
+    	try{
+	    	for(int i=0; i<y; i++){
+	    		result*=x;
+	    	}
+    	}catch(Exception e){
+    		Write_ExceptionLog("\nNclibrary - pow");
+    		return 1;
+    	}
+    	
+    	return result;
+	}
+	public static int Get_fontSize(double width){
+		return (int)((width*0.01)+8);
+	}
+	public static String Prefix(int Value){
+		try{
+			if(Value > 1000 && Value <= 1000000) return (int)(Value*0.001)+"k";
+			if(Value > 1000000) return (int)(Value*0.00001)+"m";
+		}catch(Exception e){
+    		Write_ExceptionLog("\nNclibrary - Prefix");
+    		return "";
+    	}
+		
+    	return String.valueOf(Value);
+    }
+	public static String Prefix(int Value, boolean Float){
+		try{
+			if(Float == true){
+				if(Value > 1000 && Value <= 1000000) return Math_round(Value*0.001,2)+"k";
+		    	if(Value > 1000000) return Math_round(Value*0.00001,2)+"m";
+		    	
+		    	return String.valueOf(Value);
+			}
+			else{
+				if(Value > 1000 && Value <= 1000000) return (int)(Value*0.001)+"k";
+		    	if(Value > 1000000) return (int)(Value*0.00001)+"m";
+		    	
+		    	return String.valueOf(Value);
+			}
+		}catch(Exception e){
+    		Write_ExceptionLog("\nNclibrary - Prefix");
+    		return "";
+    	}
+		
+			
+    }
+	static double Math_round(double d, int n) {
+
+	      return Math.round(d * Math.pow(10, n)) / Math.pow(10, n);
+
+	}
+
+
+	public static String Comma_Format(int Value){
+		String Result ="";
+		
+		try{
+			String temp = String.valueOf(Value);			
+			int count = 0;
+			for(int i=temp.length()-1; i>=0; i--){
+		 		count+=1;
+		 		if( count%3 == 0){
+		 			
+		 			Result = temp.charAt(i)+Result;
+		 			if(i==0)break;
+		 			Result = ","+Result;
+		 		}
+		 		else {
+		 			Result = temp.charAt(i)+Result;
+		 		}
+		 		
+		 	}
+		}catch(Exception e){
+    		Write_ExceptionLog("\nNclibrary - Comma_Format");
+    		return "";
+    	}
+    	return Result;
+    }
+	public static double Channel_to_Energy(double Channel, double A,double B,double C) //채널값을 A,B값에 의한 에너지값으로 바꾼다.
+	{
+		double Result=0;
+		
+		try{
+			if(C == 0){
+				Result = (A*Channel) + B;
+			}else{
+				Result = (A*(Channel*Channel))+(B*Channel)+C;
+			}
+		}catch(Exception e){
+    		Write_ExceptionLog("\nNclibrary - Channel_to_Energy1");
+    		return 0;
+    	}
+		
+		return Result;
+	}
+	public static double Channel_to_Energy(double Channel, double[] ABC) //채널값을 A,B값에 의한 에너지값으로 바꾼다.
+	{
+		if(ABC.length <= 1) return 0;
+		
+		
+		double Param[] =ABC; 
+		double Result=0;
+		
+		try {					
+			if(Param.length == 2){
+				Result = (Param[0]*Channel) + Param[1];
+			}else{
+				Result = (Param[0]*(Channel*Channel))+(Param[1]*Channel)+Param[2];
+			}
+		}catch(Exception e){
+    		Write_ExceptionLog("\nNclibrary - Channel_to_Energy2");
+    		Result = 0;
+    	}
+		
+		if(Double.isNaN(Result)) Result = 0;
+		return Result;
+	}
+	public static double Energy_to_Channel(double Energy, double A,double B, double C) //채널값을 A,B값에 의한 에너지값으로 바꾼다.
+	{
+		double Result = 0;
+		//int[] sdfsdf = new int[23];
+		try {		
+			if(C == 0){
+				Result = (Energy-B)/A;
+			}else{
+				Result = 2*A;	
+				Result = (-(B)+Math.sqrt((B*B)-((4*A)*(C-Energy))))/Result;
+			}	
+			//sdfsdf[-1] = 0;
+		}catch(Exception e){
+    		Write_ExceptionLog("\nNclibrary - Energy_to_Channel1");
+    		Result = 0;
+    	}
+				
+		
+		if(Result < 0) Result = 0;
+		if(Double.isNaN(Result)) Result = 0;
+		return Result;
+	}
+	public static double Energy_to_Channel(double Energy, double[] EnergyFittingArg) //채널값을 A,B값에 의한 에너지값으로 바꾼다.
+	{
+		if(EnergyFittingArg.length <= 1) return 0;
+		
+		int argSize = EnergyFittingArg.length;
+		double ABC[] = EnergyFittingArg;		
+		double Result = 0;
+		
+		try{
+			if(argSize==2){
+				Result = (Energy-ABC[1])/ABC[0];
+				
+			}else if(argSize==3){
+				
+				Result = 2*ABC[0];	
+				Result = (-(ABC[1])+Math.sqrt((ABC[1]*ABC[1])-((4*ABC[0])*(ABC[2]-Energy))))/Result;
+				
+			}		
+		}catch(Exception e){
+			Write_ExceptionLog("\nNclibrary - Energy_to_Channel2");
+			Result = 0;
+		}
+
+		if(Result < 0) Result = 0;
+		return Result;
+	}
+	 public static double[] ft_smooth(int[] ihist, double aval, double bval) {
+
+            int temp_wind = (int) Math.ceil(aval*1024+bval);
+			double temp;
+			int window=0;
+			int window_half=0;
+			double temp_sum=0;
+			double temphist1[] = new double[1024];
+			double temphist2[] = new double[1024];
+			double[] result = new double[1024];
+			
+	  try{
+			for(int i=0; i<1024;i++)
+			{	temphist1[i]=0;
+				temphist2[i]=0;
+			}
+		
+			for (int i=4; i<1024-temp_wind; i++)  {
+		
+				temp_sum=0;
+				temp=0;
+				window = (int) Math.ceil(aval*i+bval);
+		
+				if ( window <=0)
+					continue;
+		
+				if ( window%2==0)
+					window=window+1;
+		
+				window_half=window/2-1;
+		
+				for (int j=i-window_half; j<=i+window_half;j++)
+					temp_sum = temp_sum+ihist[j];
+		
+				temp = temp_sum/window;
+				temphist1[i]=temp;
+		             }
+			for (int i=4; i<1024-temp_wind; i++)  {
+		
+				temp_sum=0;
+				temp=0;
+				window = (int) Math.ceil(aval*i+bval);
+		
+				if ( window <=0)
+					continue;
+		
+				if ( window%2==0)
+					window=window+1;
+		
+				window_half=window/2-1;
+		
+				for (int j=i-window_half; j<=i+window_half;j++)
+					temp_sum = temp_sum+temphist1[j];
+		
+				temp = temp_sum/window;
+				temphist2[i]=temp;
+		             }
+				   
+		
+		
+		for(int i=0;i<1024;i++)
+				result[i]=temphist2[i];
+		
+	    }catch(Exception e){
+  		  Write_ExceptionLog("\nNclibrary - ft_smooth");  		  
+  	    }
+		return result;
+    }
+	public static double[] Smooth(int[] ChArray, int ChArray_Size, int WindowSize,int repeat){
+		double[] result = new double[ChArray_Size];
+		try{
+			
+			WindowSize = (WindowSize%2 == 0) ? WindowSize+1:WindowSize; //Window Size가 홀수 짝수 인지 판별후 홀수로
+			int WindowHalfSize = (WindowSize-1)/2; //Window Size의 절반
+			int Smooth_Start = ((WindowSize-1)/2); //채널 데이터에서 스무딩이 시작되는 지점
+			int Soomth_End = ChArray_Size-((WindowSize-1)/2); //채널 데이터에서 스무딩이 종료되는 지점
+		
+			double[] Smoothed_ChArray = new double[ChArray_Size];
+		
+			
+			for (int i = Smooth_Start; i < Soomth_End;i++)		//스무딩		
+			{
+				Smoothed_ChArray[i]=0;
+		
+					for(int k=0;k<WindowSize;k++)
+					{			
+						Smoothed_ChArray[i] += (ChArray[i-WindowHalfSize+k]);		
+					}
+					Smoothed_ChArray[i] =(Smoothed_ChArray[i]/WindowSize);
+				
+				
+			}
+			
+		
+			if(repeat > 1) // 반복
+			{
+				for(int j=0; j<repeat-1; j++){//반복 횟수
+					
+					double[] Smoothed_TempArray = new double[ChArray_Size];
+					
+					for (int i = Smooth_Start; i < Soomth_End;i++)//스무딩			
+					{
+						Smoothed_TempArray[i]=0;
+						for(int k=0;k<WindowSize;k++)
+						{			
+							Smoothed_TempArray[i] += (Smoothed_ChArray[i-WindowHalfSize+k]);		
+						}
+						Smoothed_TempArray[i] =(Smoothed_TempArray[i]/WindowSize);
+		
+					}
+		
+					for (int i=0; i<ChArray_Size; i++){//스무딩 결과 리턴
+						Smoothed_ChArray[i] = Smoothed_TempArray[i];
+					}
+				
+				}
+		
+			}
+		
+			for(int i=0; i<ChArray_Size; i++) //최종 결과 리턴
+			{
+				result[i] = (Smoothed_ChArray[i] <= 0) ? 0: Smoothed_ChArray[i];
+			}
+		
+			return result;
+		}catch(Exception e){
+			Write_ExceptionLog("\nNclibrary - Smooth");  
+			return result;
+		}
+		
+	}
+	public static int QuadraticCal(int ch1, int ch2, int ch3, double en1, double en2, double en3, double result[])  //2차방정식 칼리브레이션
+	{
+		//////////////////////
+		// Quadratic calibration
+		// y=mBluetoothImage_flag*x^2 + b*x + c ;
+		// input channel(x): ch1, ch2, ch3
+		// input energy(y): en1, en2, en3
+		// output: result, result[0] = mBluetoothImage_flag, result[1] = b, result[2] = c
+		//
+		////////////////////
+		try{
+			int resultflag=1;
+			result[0] = 0;
+			result[1] = 0;
+			result[2] = 0;
+			if(ch1 ==0 || ch2==0 || ch3==0 || en1==0 || en2==0 || en3==0)
+			{
+				return 0;
+			}
+			///////////////////////////////////////////////////
+			//// 3 point calibration
+			double[] calChArr = new double[3];
+			calChArr[0]=ch1;
+			calChArr[1]=ch2;
+			calChArr[2]=ch3;
+			
+			double[] calEnArr = new double[3];
+			calEnArr[0] = en1;
+			calEnArr[1] = en2;
+			calEnArr[2] = en3;
+			
+			
+			double[][] chMatrix = new double[3][3];
+			chMatrix[0][0] = ch1*ch1;
+			chMatrix[0][1] = ch1;
+			chMatrix[0][2] = 1;
+			
+			chMatrix[1][0] = ch2*ch2;
+			chMatrix[1][1] = ch2;
+			chMatrix[1][2] = 1;
+			
+			chMatrix[2][0] = ch3*ch3;
+			chMatrix[2][1] = ch3;
+			chMatrix[2][2] = 1;
+			
+			
+			double revD= chMatrix[0][0]*chMatrix[1][1]*chMatrix[2][2] +chMatrix[2][0]*chMatrix[0][1]*chMatrix[1][2] +chMatrix[1][0]*chMatrix[2][1]*chMatrix[0][2] 
+			- chMatrix[0][2]*chMatrix[1][1]*chMatrix[2][0] -chMatrix[0][0]*chMatrix[1][2]*chMatrix[2][1] - chMatrix[1][0]*chMatrix[0][1]*chMatrix[2][2];
+			
+			double[][] revMatrix = new double[3][3];
+			revMatrix[0][0]=(chMatrix[1][1]*chMatrix[2][2] - chMatrix[1][2]*chMatrix[2][1])/revD;
+			revMatrix[0][1]=-(chMatrix[0][1]*chMatrix[2][2] - chMatrix[0][2]*chMatrix[2][1])/revD;
+			revMatrix[0][2]=(chMatrix[0][1]*chMatrix[1][2] - chMatrix[0][2]*chMatrix[1][1])/revD;
+	
+			revMatrix[1][0]=-(chMatrix[1][0]*chMatrix[2][2] - chMatrix[1][2]*chMatrix[2][0])/revD;
+			revMatrix[1][1]=(chMatrix[0][0]*chMatrix[2][2] - chMatrix[0][2]*chMatrix[2][0])/revD;
+			revMatrix[1][2]=-(chMatrix[0][0]*chMatrix[1][2] - chMatrix[0][2]*chMatrix[1][0])/revD;
+	
+			revMatrix[2][0]=(chMatrix[1][0]*chMatrix[2][1] - chMatrix[1][1]*chMatrix[2][0])/revD;
+			revMatrix[2][1]=-(chMatrix[0][0]*chMatrix[2][1] - chMatrix[0][1]*chMatrix[2][0])/revD;
+			revMatrix[2][2]=(chMatrix[0][0]*chMatrix[1][1] - chMatrix[0][1]*chMatrix[1][0])/revD;
+	
+			for(int i=0;i<3;i++)
+			{	for(int j=0;j<3;j++)
+			{
+				result[i]=result[i]+revMatrix[i][j]*calEnArr[j];
+			}
+			}
+			return 1;
+		}catch(Exception e){
+			Write_ExceptionLog("\nNclibrary - QuadraticCal");  
+			return 0;
+		}
+	}
+	public static int QuadraticCal(double ch1, double ch2, double ch3, double en1, double en2, double en3, double result[])  //2차방정식 칼리브레이션
+	{
+		//////////////////////
+		// Quadratic calibration
+		// y=mBluetoothImage_flag*x^2 + b*x + c;
+		// input channel(x): ch1, ch2, ch3
+		// input energy(y): en1, en2, en3
+		// output: result, result[0] = mBluetoothImage_flag, result[1] = b, result[2] = c
+		//
+		////////////////////
+
+		try{
+			int resultflag=1;
+			result[0] = 0;
+			result[1] = 0;
+			result[2] = 0;
+			if(ch1 ==0 || ch2==0 || ch3==0 || en1==0 || en2==0 || en3==0)
+			{
+				return 0;
+			}
+			///////////////////////////////////////////////////
+			//// 3 point calibration
+			double[] calChArr = new double[3];
+			calChArr[0]=ch1;
+			calChArr[1]=ch2;
+			calChArr[2]=ch3;
+			
+			double[] calEnArr = new double[3];
+			calEnArr[0] = en1;
+			calEnArr[1] = en2;
+			calEnArr[2] = en3;
+			
+			
+			double[][] chMatrix = new double[3][3];
+			chMatrix[0][0] = ch1*ch1;
+			chMatrix[0][1] = ch1;
+			chMatrix[0][2] = 1;
+			
+			chMatrix[1][0] = ch2*ch2;
+			chMatrix[1][1] = ch2;
+			chMatrix[1][2] = 1;
+			
+			chMatrix[2][0] = ch3*ch3;
+			chMatrix[2][1] = ch3;
+			chMatrix[2][2] = 1;
+			
+			
+			double revD= chMatrix[0][0]*chMatrix[1][1]*chMatrix[2][2] +chMatrix[2][0]*chMatrix[0][1]*chMatrix[1][2] +chMatrix[1][0]*chMatrix[2][1]*chMatrix[0][2] 
+			- chMatrix[0][2]*chMatrix[1][1]*chMatrix[2][0] -chMatrix[0][0]*chMatrix[1][2]*chMatrix[2][1] - chMatrix[1][0]*chMatrix[0][1]*chMatrix[2][2];
+			
+			double[][] revMatrix = new double[3][3];
+			revMatrix[0][0]=(chMatrix[1][1]*chMatrix[2][2] - chMatrix[1][2]*chMatrix[2][1])/revD;
+			revMatrix[0][1]=-(chMatrix[0][1]*chMatrix[2][2] - chMatrix[0][2]*chMatrix[2][1])/revD;
+			revMatrix[0][2]=(chMatrix[0][1]*chMatrix[1][2] - chMatrix[0][2]*chMatrix[1][1])/revD;
+	
+			revMatrix[1][0]=-(chMatrix[1][0]*chMatrix[2][2] - chMatrix[1][2]*chMatrix[2][0])/revD;
+			revMatrix[1][1]=(chMatrix[0][0]*chMatrix[2][2] - chMatrix[0][2]*chMatrix[2][0])/revD;
+			revMatrix[1][2]=-(chMatrix[0][0]*chMatrix[1][2] - chMatrix[0][2]*chMatrix[1][0])/revD;
+	
+			revMatrix[2][0]=(chMatrix[1][0]*chMatrix[2][1] - chMatrix[1][1]*chMatrix[2][0])/revD;
+			revMatrix[2][1]=-(chMatrix[0][0]*chMatrix[2][1] - chMatrix[0][1]*chMatrix[2][0])/revD;
+			revMatrix[2][2]=(chMatrix[0][0]*chMatrix[1][1] - chMatrix[0][1]*chMatrix[1][0])/revD;
+	
+			for(int i=0;i<3;i++)
+			{	for(int j=0;j<3;j++)
+			{
+				result[i]=result[i]+revMatrix[i][j]*calEnArr[j];
+			}
+			}
+			return 1;
+		}catch(Exception e){
+			Write_ExceptionLog("\nNclibrary - QuadraticCal2");
+			return 0;
+		}
+	}
+	public static double DoseRateCalculate(int ChanelArray[], double[] EnergyFittingArg) {		
+		
+		try{
+			double Cali_A = EnergyFittingArg[0];
+		    double Cali_B = EnergyFittingArg[1];
+		    double Cali_C = EnergyFittingArg[2];
+			
+			double rad=(7.62/2);
+			double surface=((rad*rad)*3.141593);
+			
+			double[] MeV = new double[29];
+			double[] Factor = new double[29];
+			
+			MeV[0] = 0;      Factor[1] = 3.96*Math.pow(10, -6);
+			MeV[1] = 0.01;   Factor[2] = 5.82*Math.pow(10, -7);
+			MeV[2] = 0.03;   Factor[3] = 2.90*Math.pow(10, -7);
+			MeV[3] = 0.05;   Factor[4] = 2.58*Math.pow(10, -7);
+			MeV[4] = 0.07;   Factor[5] = 2.83*Math.pow(10, -7);
+			MeV[5] = 0.1;    Factor[6] = 3.79*Math.pow(10, -7);
+			MeV[6] = 0.15;   Factor[7] = 5.01*Math.pow(10, -7);
+			MeV[7] = 0.2;    Factor[8] = 6.31*Math.pow(10, -7);
+			MeV[8] = 0.25;   Factor[9] = 7.59*Math.pow(10, -7);
+			MeV[9] = 0.3;    Factor[10] = 8.78*Math.pow(10, -7);
+			MeV[10] = 0.35;  Factor[11] = 9.85*Math.pow(10, -7);
+			MeV[11] = 0.4;   Factor[12] = 1.08*Math.pow(10, -6);
+			MeV[12] = 0.45;  Factor[13] = 1.17*Math.pow(10, -6);
+			MeV[13] = 0.5;   Factor[14] = 1.27*Math.pow(10, -6);
+			MeV[14] = 0.55;  Factor[15] = 1.36*Math.pow(10, -6);
+			MeV[15] = 0.6;   Factor[16] = 1.44*Math.pow(10, -6); 
+			MeV[16] = 0.65;  Factor[17] = 1.52*Math.pow(10, -6);
+			MeV[17] = 0.7;   Factor[18] = 1.68*Math.pow(10, -6);
+			MeV[18] = 0.8;   Factor[19] = 1.98*Math.pow(10, -6);
+			MeV[19] = 1.0;   Factor[20] = 2.51*Math.pow(10, -6);
+			MeV[20] = 1.4;   Factor[21] = 2.99*Math.pow(10, -6);
+			MeV[21] = 1.8;   Factor[22] = 3.42*Math.pow(10, -6); 
+			MeV[22] = 2.2;   Factor[23] = 3.83*Math.pow(10, -6);
+			MeV[23] = 2.6;   Factor[24] = 4.01*Math.pow(10, -6);
+			MeV[24] = 2.8;   Factor[25] = 4.41*Math.pow(10, -6);
+			MeV[25] = 3.25;  Factor[26] = 4.83*Math.pow(10, -6);
+			MeV[26] = 3.75;  Factor[27] = 5.23*Math.pow(10, -6);
+			MeV[27] = 4.25;  Factor[28] = 5.60*Math.pow(10, -6); 
+			MeV[28] = 4.75;  
+			
+			
+			double Result=0;
+			
+			for(int K=0; K < 28; K++)
+			{
+					double Count = 0;
+					for(int i=0; i<MainActivity.CHANNEL_ARRAY_SIZE; i++)
+					{
+						double En = NcLibrary.Channel_to_Energy(i, Cali_A, Cali_B, Cali_C);
+						En = En*0.001;
+						if(MeV[K] < En &  En <= MeV[K+1]){
+							Count += ChanelArray[i];				
+						}			
+					}
+					double TEn = MeV[K+1]*1000;	
+					double factor = (-7*Math.pow(10, -16)*(TEn*TEn*TEn))+(3*Math.pow(10, -12)*(TEn*TEn))+(2*Math.pow(10, -9)*TEn)+(-6*Math.pow(10, -8));
+					//if( k == )
+					double Sv = (Count/surface)*factor;//NcLibrary.Channel_to_Energy(MeV[K+1]*1000, (-1*Math.pow(10, -12)), 7*Math.pow(10, -9), -1*Math.pow(10, -06));//*Factor[K+1];
+					Result += Sv;
+			}
+			
+			
+			return (Result*Math.pow(10, 9))/100;
+		}catch(Exception e){
+			Write_ExceptionLog("\nNclibrary - DoseRateCalculate");
+			return 0;
+		}
+
+	}
+	public static int ROIAnalysis(double[] Smoothed_ChArray, int ROI_Start, int ROI_End)
+	{
+		/*int AxisY_max=0;	
+		Vector<Integer> Peak_Ch = new Vector<Integer>();
+		int result =0;
+		double Total_count=0;
+		
+		for (int n=ROI_Start; n<ROI_End; n++) //피크를 찾는다.
+		{
+				Total_count+=Smoothed_ChArray[n];
+				if (Smoothed_ChArray[n-5]<Smoothed_ChArray[n] && Smoothed_ChArray[n+5]<Smoothed_ChArray[n])
+				{	
+					Peak_Ch.add(n);			
+				}
+		}
+
+/////////////////////
+		for(int i=0; i<Peak_Ch.size(); i++) //피크들중 제일 큰 값을 찾는다.
+		{
+			if(Smoothed_ChArray[Peak_Ch.get(i)] > AxisY_max){
+				AxisY_max = (int) Smoothed_ChArray[Peak_Ch.get(i)];
+				result = Peak_Ch.get(i); 
+			}
+			
+		}*/		
+		///////////
+		try{
+			double MAX= 0;
+			double AVG= 0;
+			double SUM = 0;
+			double Base_Pyuncha = 0;
+			Vector<Double> roiSPC = new Vector<Double>();
+			Vector<Double> Pyuncha = new Vector<Double>();
+			for(int i=ROI_Start; i<=ROI_End; i++){
+				roiSPC.add(Smoothed_ChArray[i]);			
+				SUM+=Smoothed_ChArray[i];
+				if(Smoothed_ChArray[i] > MAX){
+					MAX = Smoothed_ChArray[i];
+				}
+			}
+			AVG = SUM/roiSPC.size();
+			
+			for(int i=ROI_Start; i<=ROI_End; i++){
+				double bunsan_per = ((AVG - Smoothed_ChArray[i])/MAX)*100;
+				Pyuncha.add(bunsan_per*bunsan_per);			
+				
+				Base_Pyuncha += bunsan_per*bunsan_per;
+			}
+			AVG = Base_Pyuncha/roiSPC.size();
+			Base_Pyuncha = Math.sqrt(AVG);
+			
+			if(Base_Pyuncha < 20) return 0;
+			/////////
+			double[] sst = new double[1024];
+			for( int i=0; i<1024; i++){
+				sst[i] = Smoothed_ChArray[i];
+			}
+	
+			double y2max = 0;
+			double xmax = 0;
+			double temp_y2max = 0;
+			double x2max =0;
+			
+			for (int n=ROI_Start;n<ROI_End;n++)
+			{
+				if(sst[n]>y2max )//&& Smoothed_ChArray[n]>50)
+				{
+					if (sst[n-10]<sst[n] && sst[n+10]<sst[n])
+					{
+						if (sst[n-30]<0.8*sst[n] && sst[n+30]<0.8*sst[n])   //근처의 값들이 피크로 부터 급격히 감소하는지 판단
+						{
+							if(Math.abs(xmax-n)>100)			//50ch 근처의 피크들은 인정하지 않음
+							{
+								if(sst[n]>temp_y2max)
+								{	y2max= sst[n];
+									x2max=n;
+									temp_y2max= sst[n];
+								}
+							}
+						}
+					}				
+				}		
+			}
+			
+			ROI_End = NcLibrary.Auto_floor(Base_Pyuncha); 
+			return NcLibrary.Auto_floor(x2max);	
+			
+		}catch(Exception e){
+			
+			Write_ExceptionLog("\nNclibrary - ROIanalysis");
+			return 0;
+		}
+	}
+	public static double ROIAnalysis(double[] Smoothed_ChArray, int ROI_Start, int ROI_End,int tor)//표준편차만 리턴
+	{		
+		try{
+			double MAX= 0;
+			double AVG= 0;
+			double SUM = 0;
+			double Base_Pyuncha = 0;
+			Vector<Double> roiSPC = new Vector<Double>();
+			Vector<Double> Pyuncha = new Vector<Double>();
+			for(int i=ROI_Start; i<=ROI_End; i++){
+				roiSPC.add(Smoothed_ChArray[i]);			
+				SUM+=Smoothed_ChArray[i];
+				if(Smoothed_ChArray[i] > MAX){
+					MAX = Smoothed_ChArray[i];
+				}
+			}
+			AVG = SUM/roiSPC.size();
+			
+			for(int i=ROI_Start; i<=ROI_End; i++){
+				double bunsan_per = ((AVG - Smoothed_ChArray[i])/MAX)*100;
+				Pyuncha.add(bunsan_per*bunsan_per);			
+				
+				Base_Pyuncha += bunsan_per*bunsan_per;
+			}
+			AVG = Base_Pyuncha/roiSPC.size();
+			Base_Pyuncha = Math.sqrt(AVG);
+			
+			return Base_Pyuncha;
+			
+		}catch(Exception e){
+			Write_ExceptionLog("\nNclibrary - ROIanalysis2");
+			return 0;
+		}
+	}
+	public static int ROIAnalysis(double[] Smoothed_ChArray, int ROI_Start, int ROI_End,boolean isK40)
+	{
+		try{
+			double AxisY_max=0;	
+			Vector<Integer> Peak_Ch = new Vector<Integer>();
+			int[] result = new int[2];
+			double Total_count=0;
+			
+			for (int n=ROI_Start; n<ROI_End; n++) //피크를 찾는다.
+			{
+					Total_count+=Smoothed_ChArray[n];
+					if (Smoothed_ChArray[n-5]<Smoothed_ChArray[n] && Smoothed_ChArray[n+5]<Smoothed_ChArray[n])
+					{	
+						Peak_Ch.add(n);			
+					}
+			}
+	
+			for(int i=0; i<Peak_Ch.size(); i++) //피크들중 제일 큰 값을 찾는다.
+			{
+				if(Smoothed_ChArray[Peak_Ch.get(i)] > AxisY_max){
+					AxisY_max =  Smoothed_ChArray[Peak_Ch.get(i)];
+					result[0] = Peak_Ch.get(i); 
+				}
+				
+			}
+			for(int i=0; i<Peak_Ch.size(); i++)
+			{
+				if(result[0] == Peak_Ch.get(i)){
+					Peak_Ch.remove(i);
+					break;
+				}
+			}
+			for(int i=0; i<Peak_Ch.size(); i++) //피크들중 제일 큰 값을 찾는다.
+			{
+				if(Smoothed_ChArray[Peak_Ch.get(i)] > AxisY_max){
+					AxisY_max = Smoothed_ChArray[Peak_Ch.get(i)];
+					result[1] = Peak_Ch.get(i); 
+				}
+				
+			}
+			
+			return (result[0] < result[1]) ? result[1] : result[0];
+		}catch(Exception e){
+			Write_ExceptionLog("\nNclibrary - ROIanalysis3");
+			return 0;
+		}
+	}
+		
+	public static double ROIAnalysis_GetTotCnt(double[] Smoothed_ChArray, int ROI_Start, int ROI_End)
+	{
+		try{
+			double result =0;
+			for(int i=ROI_Start; i<ROI_End; i++){
+				result += Smoothed_ChArray[i];
+			}		
+			return result;
+		}catch(Exception e){
+			Write_ExceptionLog("\nNclibrary - ROIAnalysis_Get_TotCnt");
+			return 0;
+		}
+	}
+	public static int ROIAnalysis_GetTotCnt(int[] Smoothed_ChArray, int ROI_Start, int ROI_End)
+	{
+		try{
+			int result =0;
+			for(int i=ROI_Start; i<ROI_End; i++){
+				result += Smoothed_ChArray[i];
+			}
+			return result;
+			
+		}catch(Exception e){
+			Write_ExceptionLog("\nNclibrary - ROIAnalysis_Get_TotCnt2");
+			return 0;
+		}
+	}
+	public static int Auto_floor(double value)
+	{
+		return (int) Math.floor(value+0.5);
+	}
+	public static double Get_Roi_window_by_energy(double Energy){
+		
+		try{
+			if(Energy>2200){
+				return (72*Math.pow(Energy, -0.338));//*1.7;	
+			}
+			else return (72*Math.pow(Energy, -0.43));//*1.7;
+			
+		}catch(Exception e){
+			Write_ExceptionLog("\nNclibrary - Get_Roi_window_by_energy");
+			return 0;
+		}
+		//return 45*Math.pow(Energy, -0.309);
+	}
+	public static double Get_Roi_window_by_energy_VAllY(double Energy){
+		return 750*Math.pow(Energy, -0.79)+7;
+	}
+	public static int[] Import_spectrum_data(String Path, int Channel_size)
+	{
+		int[] result = new int[Channel_size];
+		
+		
+///////////스펙트럼 텍스트파일 생성
+
+    String temp = "0";
+    int k = 0;
+    
+    try {
+			FileInputStream fos = new FileInputStream(Path);
+			DataInputStream dow = new DataInputStream(fos);
+			for(int i=0;i<5000;i++){
+				int sdq = fos.read();
+				if(sdq != 10 & sdq != 32)
+					{
+						sdq = sdq-48;
+						temp = temp+sdq;
+					}
+				else{
+					result[k] = Integer.valueOf(temp);
+					temp = "0";
+					k += 1;
+					if(k == 1024) break;
+				}
+						
+				//Result[i] = Integer.valueOf(fos.read());
+			}
+			fos.close();
+			dow.close();
+
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block	
+			Write_ExceptionLog("\nNclibrary - Import_spectrum_data");		
+			e.printStackTrace();
+		} catch (IOException e) {
+			Write_ExceptionLog("\nNclibrary - Import_spectrum_data");	
+			e.printStackTrace();
+		}
+    
+		return result;
+	}
+	public static boolean Write_ExceptionLog(String data){
+		 Calendar calendar = Calendar.getInstance();
+		 Date date = calendar.getTime();
+		 String Today = (new SimpleDateFormat("(yyyy-MM-dd_HH:mm:ss)").format(date));
+		
+		 File sdcard = Environment.getExternalStorageDirectory();          
+		 File dbpath = new File(sdcard.getAbsolutePath());   		                 
+		 String dbfile = dbpath.getAbsolutePath() + File.separator + "SystemLog.txt";   		  
+		 
+		 Today = data +"  "+ Today;
+		 try{
+			  FileOutputStream fos = new FileOutputStream(dbfile,true);
+			  fos.write(Today.getBytes());					
+			  fos.close();
+		  } catch (FileNotFoundException e) {
+			  e.printStackTrace();
+		  } catch (IOException e) {
+			  e.printStackTrace();
+		  }
+		  return true;
+	}
+	public static boolean Export_ToTextFile(String FileName,String data){
+		
+		  File sdcard = Environment.getExternalStorageDirectory();          
+		  File dbpath = new File(sdcard.getAbsolutePath());   
+		                  
+		  String dbfile = dbpath.getAbsolutePath() + File.separator + FileName+".txt";   
+		  
+		  try {
+					FileOutputStream fos = new FileOutputStream(dbfile,true);
+		
+					fos.write(data.getBytes());					
+				
+					fos.close();
+				} catch (FileNotFoundException e) {
+					Write_ExceptionLog("\nNclibrary - Export_ToTextFile");	
+					e.printStackTrace();
+				} catch (IOException e) {
+					Write_ExceptionLog("\nNclibrary - Export_ToTextFile");	
+					e.printStackTrace();
+				}
+		  return true;
+	}
+	public static boolean Export_spectrum_data(String FileName, int[] SPC, int Channel_size){
+		
+///////////스펙트럼 텍스트파일 생성
+	    File sdcard = Environment.getExternalStorageDirectory();          
+	    File dbpath = new File(sdcard.getAbsolutePath());   
+	                    
+	    String dbfile = dbpath.getAbsolutePath() + File.separator + FileName +".txt";   
+	    
+	    try {
+				FileOutputStream fos = new FileOutputStream(dbfile,false);
+	
+				for(int i=0;i<Channel_size;i++){
+				
+					fos.write(String.valueOf(SPC[i]+" ").getBytes());					
+				}
+				fos.close();
+			} catch (FileNotFoundException e) {
+				Write_ExceptionLog("\nNclibrary - Export_spectrum_data");	
+				e.printStackTrace();
+			} catch (IOException e) {
+				Write_ExceptionLog("\nNclibrary - Export_spectrum_data");	
+				e.printStackTrace();
+			}
+    	return true;
+	}
+	public static boolean Export_spectrum_data(double[] SPC, int Channel_size){
+		
+///////////스펙트럼 텍스트파일 생성
+      File sdcard = Environment.getExternalStorageDirectory();          
+      File dbpath = new File(sdcard.getAbsolutePath());   
+                      
+      String dbfile = dbpath.getAbsolutePath() + File.separator + "SPC.txt";   
+      
+      try {
+			FileOutputStream fos = new FileOutputStream(dbfile,true);
+		
+			for(int i=0;i<Channel_size;i++){
+			
+				fos.write(String.valueOf("\n "+SPC[i]+" ").getBytes());					
+			}
+			fos.close();
+		} catch (FileNotFoundException e) {
+			Write_ExceptionLog("\nNclibrary - Export_spectrum_data2");	
+			e.printStackTrace();
+		} catch (IOException e) {
+			Write_ExceptionLog("\nNclibrary - Export_spectrum_data2");	
+			e.printStackTrace();
+		}
+      return true;
+	}
+	public static boolean Export_spectrum_data(String FileName, double[] SPC, int Channel_size){
+		
+///////////스펙트럼 텍스트파일 생성
+    File sdcard = Environment.getExternalStorageDirectory();          
+    File dbpath = new File(sdcard.getAbsolutePath());   
+                    
+    String dbfile = dbpath.getAbsolutePath() + File.separator + FileName+".txt";   
+    
+    try {
+			FileOutputStream fos = new FileOutputStream(dbfile,true);
+		
+			for(int i=0;i<Channel_size;i++){
+			
+				fos.write(String.valueOf("\n "+SPC[i]+" ").getBytes());					
+			}
+			fos.close();
+		} catch (FileNotFoundException e) {
+			Write_ExceptionLog("\nNclibrary - Export_spectrum_data3");	
+			e.printStackTrace();
+		} catch (IOException e) {
+			Write_ExceptionLog("\nNclibrary - Export_spectrum_data3");
+			e.printStackTrace();
+		}
+    return true;
+	}
+	public static boolean Wrtie_SW_RealTime_Log(String log){
+		
+///////////스펙트럼 텍스트파일 생성
+    File sdcard = Environment.getExternalStorageDirectory();          
+    File dbpath = new File(sdcard.getAbsolutePath());   
+                    
+    String dbfile = dbpath.getAbsolutePath() + File.separator + "SAM_Log.txt";   
+    
+    try {
+			FileOutputStream fos = new FileOutputStream(dbfile);
+			
+			fos.write(log.getBytes());					
+			
+			fos.close();
+		} catch (FileNotFoundException e) {
+			Write_ExceptionLog("\nNclibrary - Write_SW_RealTime_Log");
+			e.printStackTrace();
+		} catch (IOException e) {
+			Write_ExceptionLog("\nNclibrary - Write_SW_RealTime_Log");
+			e.printStackTrace();
+		}
+    return true;
+	}
+	public static String SvToString(double nSv,boolean point, boolean IsSvUnit){ // 숫자형 시보트 값을 string으로
+    	try{
+	  	  if(IsSvUnit == false)nSv = nSv * 100;
+	  	  
+	  	    DecimalFormat format = new DecimalFormat();
+	  		String unit = " Sv/h";
+	  		double value = 1;
+	      	int checker = 0;
+	  	     if(point == true){
+	  	    	if(nSv < Math.pow(10,3)){value=nSv*0.001; unit=" uSv/h";checker=1;}
+	  	    	else if(nSv >= Math.pow(10,3) & nSv < Math.pow(10,6)){value=(nSv*0.001); unit=" uSv/h";}
+	  	    	else if(nSv >= Math.pow(10,6) & nSv < Math.pow(10,9)){value=(nSv*0.000001); unit=" mSv/h";}
+	  	    	else if(nSv >  Math.pow(10,9)) {value=(nSv*0.000000001); unit=" Sv/h";}
+	  	    	}
+	  	     else{
+	  	    	 if(nSv < Math.pow(10,3)){value = nSv; unit = " nSv/h";}
+	  	     	 else if(nSv >= Math.pow(10,3) & nSv < Math.pow(10,6)){value = (nSv*0.001); unit = " uSv/h";}
+	  	     	 else if(nSv >= Math.pow(10,6) & nSv < Math.pow(10,9)){value =  nSv*0.000001; unit = " mSv/h";}
+	  	     	 else if(nSv >  Math.pow(10,9)) {value = nSv*0.000000001 ; unit =" Sv/h";}
+	  	     	}
+	       
+	  	                                                      
+	  	     if(checker == 1)format.applyLocalizedPattern("0.###");
+	  	     else format.applyLocalizedPattern("0.##");
+	  	     
+	  	     if(IsSvUnit == false){
+	  	    	 unit = unit.replace("Sv/h","rem/h");
+	  	     }
+	      	 return format.format(value)+unit;	  	     
+	       
+	      }catch(Exception e){
+	    	  Write_ExceptionLog("\nNclibrary - SvToString");
+	    	  return "error";
+	      }
+	}
+	
+	public static int[] FindPeak(int[] ChCount) {
+		try{
+			long xmax=0,x2max=0;
+			long ymax=0,y2max=0;
+	
+	
+			double[] x = new double[1024];
+			double[] y = new double[1024];
+			double[] y2 = new double[1024];
+			double temp_xmax=0;
+			double temp_x2max=0;
+			
+			double temp_ymax=0;
+			double temp_y2max=0;
+			
+			double[] smoo = new double[11];
+			for(int i=0; i<11; i++)				// x[i]에 백업해두고
+			{
+				smoo[i]=1;
+			}
+			double[] smoo2 = new double[21];
+			for(int i=0; i<21; i++)				// x[i]에 백업해두고
+			{
+				smoo2[i]=1;
+			}
+			
+			
+			double[] smoo3 = new double[5];
+			for(int i=0; i<5; i++)				// x[i]에 백업해두고
+			{
+				smoo3[i]=1;
+			}
+	
+			int P=11;int P2=21;int P3=5;int P3_h=2;
+			
+			//11point averaging 으로 Smoothing하는 루틴
+	
+			
+			for(int i=0; i<1024; i++)				// x[i]에 백업해두고
+			{
+				x[i]=ChCount[i];
+				y[i]= ChCount[i];
+			}
+	
+			/*
+			for (int n=0;n<1021;n++)				
+			{
+				if(n<=3)
+				{
+					y[n]=ChCount[n];
+				}else{
+					y[n]=0;
+					for(int k=0;k<P3;k++)
+					{
+						y[n] += (smoo[k]*ChCount[n-P3_h+k]);			// y2[n]에 smoo2로 스무딩된값 저장
+					}
+					y[n] = (int)(y[n]/P3);
+				}
+			}
+			*/
+	
+			for (int n=3;n<24;n++)
+			{
+				if(y[n]>ymax && y[n]>50) // 5ch 50counts 이상이면서 큰값
+				{
+					if (y[n-3]<y[n] && y[n+5]<y[n])	
+					{
+						if(n>50)
+						{
+							if ( y[n-3]<0.85*y[n] && y[n+3]<0.85*y[n])   //근처의 값들이 피크로 부터 급격히 감소하는지 판단
+							{
+								
+								{
+									//y2max=ymax;x2max=xmax;			
+									ymax=(int)y[n];	xmax=n;
+									//break;
+								}
+							}
+						}else{
+							if (y[n+5]<0.9*y[n])   //근처의 값들이 피크로 부터 급격히 감소하는지 판단
+							{
+								if(y[n] >temp_ymax)
+								{
+									//y2max=ymax;x2max=xmax;			
+									ymax=(int)y[n];	xmax=n;
+									temp_ymax=y[n];
+									//break; 							
+								}
+							}
+						}
+					}
+				}         
+			}
+			
+			
+			for (int n=150;n<300;n++)
+			{
+				if(n>50 && y[n]>y2max && y[n]>50)
+				{
+					if (y[n-10]<y[n] && y[n+10]<y[n])
+					{
+						if (n<50 || y[n-30]<0.8*y[n] && y[n+30]<0.8*y[n])   //근처의 값들이 피크로 부터 급격히 감소하는지 판단
+						{
+							if(Math.abs(xmax-n)>100)			//50ch 근처의 피크들은 인정하지 않음
+							{
+								if(y[n]>temp_y2max)
+								{	
+									y2max=(long)y[n];
+									x2max=n;
+									temp_y2max=y[n];
+								}
+							}
+						}
+					}				
+				}		
+			}
+			
+			int xtemp;
+			long ytemp;
+			
+			ymax=ChCount[(int)xmax];
+			y2max=ChCount[(int)x2max];
+			
+			int[] peck = new int[2];
+			peck[0] = (int)xmax;
+			peck[1] = (int)x2max;
+			
+			return peck;
+		}catch(Exception e){
+			Write_ExceptionLog("\nNclibrary - FindPeak");
+			return new int[2];
+		}
+		
+	}
+	public static double Sv_To_Rem(double Sv){
+		try{
+			return Sv*100;
+		}
+		catch(Exception e){
+			Write_ExceptionLog("\nNclibrary - Sv_To_Rem");
+			return 0;
+		}
+	}
+	public static double Rem_To_Sv(double Rem){
+		try{
+			return Rem*0.01;
+		}catch(Exception e){
+			Write_ExceptionLog("\nNclibrary - Rem_To_Sv");
+			return 0;
+		}
+	}
+	public static double[] Nomalization(int[] SPC,int spcSize,int AcqTime, int[] BG, int BgAcqTime){
+		double Result[] = new double[spcSize];
+		
+		try{
+			for(int i=0; i<spcSize; i++)
+			{
+				Result[i] = SPC[i]-((BG[i]/BgAcqTime)*AcqTime);
+			}
+			return Result;
+		}
+		catch(Exception e){
+			Write_ExceptionLog("\nNclibrary - Nomalization");
+			return Result;
+		}
+	}
+	public static double GM_to_uSV(int GM_count){
+		double result=0;
+		
+		try{
+			if(GM_count != 0) result = GM_count/0.171;
+		}
+		catch(Exception e){
+			Write_ExceptionLog("\nNclibrary - GM_to_uSV");
+		}
+		return result;
+	}
+	public static int[] Init_ChannelArray(int[] Array,int ArraySize)
+	{
+		int[] result = new int[ArraySize];
+		
+		try{
+			for(int i=0; i < ArraySize; i++){                        		
+				Array[i] =0;
+	    	}
+		}
+		catch(Exception e){
+			Write_ExceptionLog("\nNclibrary - Init_ChannelArray");
+		}
+		
+		return result;
+	}
+	public static String Get_GMT(){
+		
+		try{				
+			Calendar calendar = Calendar.getInstance();
+	      	Date date = calendar.getTime();
+	            
+			int gmt = calendar.get(Calendar.ZONE_OFFSET);
+	        gmt = (int) ((gmt*0.001)/3600);
+	        
+	      	String tte;
+	      	if(gmt > 0) tte = "+";
+	      	else tte = "";		      
+	      	return String.format("%s%d:00", tte,gmt);
+		}
+		catch(Exception e){
+			Write_ExceptionLog("\nNclibrary - Get_GMT");
+			return "";
+		}
+		
+	}
+	public static Vector<Integer> Separate_EveryDash(String Data){
+		Vector<Integer> result = new Vector<Integer>();
+		
+		try{
+			String OneData = "";
+			for(int i=0; i<Data.length(); i++){
+				if(Data.charAt(i) == ';'){
+					
+					result.add(Integer.valueOf(OneData));
+					OneData = "";
+				}else{
+					OneData = OneData+Data.charAt(i);	
+				}
+					
+			}
+			return result;
+		}catch(Exception e){
+			Write_ExceptionLog("\nNclibrary - Separate_EveryDash");
+			return result;
+		}
+	}
+	public static int[] Separate_EveryDash(String Data,boolean isIntegerArray)
+	{
+		int[] result = new int[1024];
+		
+		try{
+			String OneData = "";
+			int cnt = 0;
+			for(int i=0; i<Data.length(); i++){
+				if(Data.charAt(i) == ';'){
+					
+					result[cnt] = Integer.valueOf(OneData);
+					cnt +=1;
+					OneData = "";
+				}else{
+					OneData = OneData+Data.charAt(i);	
+				}
+					
+			}
+			return result;
+		}
+		catch(Exception e){
+			Write_ExceptionLog("\nNclibrary - FindPeak");
+			return new int[1024];
+		}
+		
+	}
+	public static int[] Separate_EveryIndex(String Data,char index)
+	{
+		int[] result = new int[1024];
+		
+		try{
+			String OneData = "";
+			int cnt = 0;
+			for(int i=0; i<Data.length(); i++){
+				if(Data.charAt(i) == index){
+					
+					result[cnt] = Integer.valueOf(OneData);
+					cnt +=1;
+					OneData = "";
+				}else{
+					OneData = OneData+Data.charAt(i);	
+				}
+					
+			}
+			return result;
+		}
+		catch(Exception e){
+			Write_ExceptionLog("\nNclibrary - FindPeak");
+			return new int[1024];
+		}
+		
+	}
+	public static double[] Separate_EveryIndexD(String Data,char index)
+	{
+		double[] result = new double[1024];
+		
+		try{
+			String OneData = "";
+			int cnt = 0;
+			for(int i=0; i<Data.length(); i++){
+				if(Data.charAt(i) == index){
+					
+					result[cnt] = Double.valueOf(OneData);
+					cnt +=1;
+					OneData = "";
+				}else{
+					OneData = OneData+Data.charAt(i);	
+				}
+					
+			}
+			return result;
+		}
+		catch(Exception e){
+			Write_ExceptionLog("\nNclibrary - FindPeak");
+			return new double[1024];
+		}
+		
+	}
+	public static Vector<String> Separate_EveryDash2(String Data)
+	{
+		if(Data == null) return null;
+		
+		try{
+		Vector<String> result = new Vector<String>();
+		
+		String OneData = "";
+		for(int i=0; i<Data.length(); i++){
+			if(Data.charAt(i) == ';'){
+				
+				result.add(OneData);
+				OneData = "";
+			}else{
+				OneData = OneData+Data.charAt(i);	
+			}
+				
+		}
+		return result;
+		
+		}catch(Exception e){
+			Write_ExceptionLog("\nNclibrary - sseparte_everyDash2");
+			return new Vector<String>();
+		}
+	}
+	public static Vector<String> Separate_EveryDash2(String Data,char Index)
+	{
+		
+		try{
+			Vector<String> result = new Vector<String>();
+			
+			String OneData = "";
+			for(int i=0; i<Data.length(); i++){
+				if(Data.charAt(i) == Index){
+					
+					result.add(OneData);
+					OneData = "";
+				}else{
+					OneData = OneData+Data.charAt(i);	
+				}
+					
+			}
+			if(OneData != "") result.add(OneData);
+			return result;
+		}catch(Exception e){
+			Write_ExceptionLog("\nNclibrary - Separate_EveryDash22");
+			return new Vector<String>();
+		}
+	}
+	public static double Get_Isotope_Doserate(Spectrum SPC_Data,Spectrum BG_Data, Isotope Target)
+	{
+		
+		double result =0;		
+		int[] SPC = SPC_Data.ToInteger();
+		int[] temp = new int[SPC_Data.Get_Ch_Size()];
+		double[] tempSPC = new double[SPC_Data.Get_Ch_Size()];
+		
+		tempSPC = NcLibrary.Nomalization(SPC, 1024,SPC_Data.Get_AcqTime(), BG_Data.ToInteger(), BG_Data.Get_AcqTime());
+		
+		try{	
+			for(int EnergyCnt = 0; EnergyCnt<Target.FoundPeaks.size(); EnergyCnt++){
+				int Vally_Start = Target.FoundPeaks.get(EnergyCnt).Vally_CH.x;
+				int Vally_End = Target.FoundPeaks.get(EnergyCnt).Vally_CH.y;
+				
+				for(int i=Vally_Start; i<=Vally_End; i++){
+					if(i < 0) continue;
+					if(Vally_Start == 0 & Vally_End == 0) break;
+					//temp[i] =  NcLibrary.Auto_floor( (SPC[i]-NcLibrary.Channel_to_Energy(i, Target.Channel2_AB.x, Target.Channel2_AB.y, 0))); 
+					try{
+						double resulta=(float)((SPC[Vally_Start]-SPC[Vally_End])/(Vally_Start-Vally_End));
+						double resultb=(float)(SPC[Vally_Start]-(resulta*Vally_Start));
+						temp[i] = NcLibrary.Auto_floor( (tempSPC[i]-NcLibrary.Channel_to_Energy(i, resulta,resultb, 0)));
+					}catch(Exception e){
+						Write_ExceptionLog("\nNclibrary - Get_Isotope_Doserate _ ab"); //_ MS:"+SPC_Data.ToString()+" _ BG:"+BG_Data.ToString());
+						return 0;
+					}
+					
+				}
+			}
+			
+			
+			for(int i=0; i<temp.length; i++){
+				if(temp[i] < 0) temp[i] = 0; 
+			}
+			
+		}catch(Exception e){	
+			Write_ExceptionLog("\nNclibrary - Get_Isotope_Doserate"); //_ MS:"+SPC_Data.ToString()+" _ BG:"+BG_Data.ToString());
+			return 0;
+		}	
+		
+		result = NcLibrary.DoseRateCalculate(temp,SPC_Data.Get_Coefficients());					
+		return (result <= 0)? 1: result;
+		
+	}
+	public static double SvToR(double Sv){
+		try{
+			return Sv*100;
+		}catch(Exception e){
+			Write_ExceptionLog("\nNclibrary - FWHM");
+			return 0;
+		}
+	}
+	public static double FWHM(double[] Smoothed_ChArray,int ChArray_size, int Peak_Channel, double Cali_A, double Cali_B, boolean Energy)
+    {
+		
+		try{
+	    	int LeftMax = Peak_Channel;
+	    	int RightMax = Peak_Channel;
+	
+	    	int OriMax = Peak_Channel;	
+	    	int HV = (int) (Smoothed_ChArray[Peak_Channel] / 2);
+	    	
+	    	int count=0;
+	    	
+	
+	    	int tempy0=0;
+	    	
+	    	int tempy1=0;
+	
+	    	double tempdev1=0.0;
+	    	double tempdev2=0.0;
+	
+	    	while(Smoothed_ChArray[LeftMax] >= HV)
+	    	{	
+	    		tempy0=(int) Smoothed_ChArray[LeftMax];
+	    		tempy1=(int) Smoothed_ChArray[LeftMax+1];
+	    		if(LeftMax==0) return 0;
+	    		LeftMax--;count++;
+	    	}
+	    	if ((tempy0-tempy1) != 0)
+	    		tempdev1=LeftMax+Math.abs(HV-tempy0)/Math.abs(tempy0-tempy1);
+	    	else
+	    		tempdev1=LeftMax;
+	    	
+	
+	
+	    	while(Smoothed_ChArray[RightMax] >= HV)
+	    	{	
+	    		tempy0=(int) Smoothed_ChArray[RightMax];
+	    		tempy1=(int) Smoothed_ChArray[RightMax-1];
+	    	
+	    		if(RightMax==ChArray_size) return 0;
+	    		RightMax++;count++;
+	    	}
+	    	if((tempy0-tempy1) !=0)
+	    		tempdev2=(RightMax-1)+Math.abs(HV-tempy1)/Math.abs(tempy0-tempy1);
+	    	else
+	    		tempdev2=RightMax;
+	
+	
+	    	if(Energy == true) return (NcLibrary.Channel_to_Energy(tempdev2,Cali_A,Cali_B,0) - Channel_to_Energy(tempdev1,Cali_A,Cali_B,0)/Channel_to_Energy(OriMax,Cali_A,Cali_B,0))*100.0;
+	    	else               return ((tempdev2-tempdev1)/OriMax)*100;
+	    	
+	    	
+		}catch(Exception e){
+			Write_ExceptionLog("\nNclibrary - FWHM");
+			return 0;
+		}
+    	
+    }   
+	public static int Get_RoiCount(int[] channel,int start,int end)
+	{
+		int result =0;
+		for(int i=start; i<=end; i++){
+			result += channel[i];
+		}
+		return result;
+	}
+	public static class Event_XML{
+		public static String WriteXML_toANSI42(EventData event){
+			//create a new file called "new.xml" in the SD card
+	        File newxmlfile = new File(Environment.getExternalStorageDirectory()+"/Event.xml");
+	        try{
+	                newxmlfile.createNewFile();
+	        }catch(IOException e){
+	                Log.e("IOException", "exception in createNewFile() method");
+	        }
+	        //we have to bind the new file with a FileOutputStream
+	        FileOutputStream fileos = null;        
+	        try{
+	                fileos = new FileOutputStream(newxmlfile);
+	        }catch(FileNotFoundException e){
+	                Log.e("FileNotFoundException", "can't create FileOutputStream");
+	        }
+	        //we create a XmlSerializer in order to write xml data
+	        XmlSerializer serializer = Xml.newSerializer();
+	        try {
+    				//we set the FileOutputStream as output for the serializer, using UTF-8 encoding
+                    serializer.setOutput(fileos, "UTF-8");
+                    //Write <?xml declaration with encoding (if encoding not null) and standalone flag (if standalone not null)
+                    serializer.startDocument(null, Boolean.valueOf(true));
+                    //set indentation option
+                    serializer.setFeature("http://xmlpull.org/v1/doc/features.html#indent-output", true);
+                    //start a tag called "root"
+                    serializer.startTag(null, "N42InstrumentData");
+                    serializer.attribute(null, "xmlns", "http://physics.nist.gov/Divisions/Div846/Gp4/ANSIN4242/2005/ANSIN4242");
+                    serializer.attribute(null, "xmlns:xsi", "http://www.w3.org/2001/XMLSchema-instance");
+                    serializer.attribute(null, "xsi:schemaLocation", "http://physics.nist.gov/Divisions/Div846/Gp4/ANSIN4242/2005/ANSIN4242 http://physics.nist.gov/Divisions/Div846/Gp4/ANSIN4242/2005/ANSIN4242.xsd");
+                    	///----------------------------------------------------
+	                    serializer.startTag(null, "Measurement");
+	                    serializer.attribute(null, "UUID", "54531d28-402b-11d8-af12-0002a5094c23");
+	                    	serializer.startTag(null, "InstrumentInformation");
+	                    		serializer.startTag(null, "InstrumentType");
+	                    		serializer.text("Spectrometer");
+	                    		serializer.endTag(null, "InstrumentType");
+	                    		
+	                    		serializer.startTag(null, "Manufacturer");
+	                    		serializer.text("Berkeley Nucleonics Corp.");
+	                    		serializer.endTag(null, "Manufacturer");
+	                    		
+	                    		serializer.startTag(null, "InstrumentModel");
+	                    		serializer.text("SAM 945");
+	                    		serializer.endTag(null, "InstrumentModel");
+	                    		
+	                    		serializer.startTag(null, "InstrumentID");
+	                    		serializer.text((event.Instrument_SerialNumber==null)?"":event.Instrument_SerialNumber);
+	                    		serializer.endTag(null, "InstrumentID");
+	                    	serializer.endTag(null, "InstrumentInformation");
+	                    	//
+		                    serializer.startTag(null, "MeasuredItemInformation");
+	                    		serializer.startTag(null, "ItemDescription");
+	                    		serializer.text("Cal standard 1");
+	                    		serializer.endTag(null, "ItemDescription");
+	                    		
+	                    		serializer.startTag(null, "ItemQuantity");
+	                    		serializer.attribute(null, "Units", "Kg");
+	                    		serializer.text("1.0.0");
+	                    		serializer.endTag(null, "ItemQuantity");
+	                    		
+	                    		serializer.startTag(null, "MeasurementLocation");
+	                    			serializer.startTag(null, "MeasurementLocationName");
+	                    			serializer.text("None");
+	                    			serializer.endTag(null, "MeasurementLocationName");
+	                    			
+	                    			serializer.startTag(null, "Coordinates");
+	                    			serializer.text(event.GPS_Latitude+" "+event.GPS_Longitude);
+	                    			serializer.endTag(null, "Coordinates");                    			
+	                    		serializer.endTag(null, "MeasurementLocation");
+	                    		
+	                    		serializer.startTag(null, "ItemReferenceDate");
+	                    		serializer.text(event.Event_Date+"T"+event.StartTime+Get_GMT());
+	                    		serializer.endTag(null, "ItemReferenceDate");
+                    		serializer.endTag(null, "MeasuredItemInformation");
+                    		
+                    		// Mesurement spectrum
+                    		serializer.startTag(null, "Spectrum");
+                    		serializer.attribute(null,"CalibrationIDs" , "en");
+	                    		serializer.startTag(null, "StartTime");
+	                    		serializer.text(event.Event_Date+"T"+event.StartTime+Get_GMT());
+	                    		serializer.endTag(null, "StartTime");
+	                    		
+	                    		serializer.startTag(null, "RealTime");
+	                    		serializer.text("PT"+event.Detector.MS.Get_AcqTime()+".0S");
+	                    		serializer.endTag(null, "RealTime");
+	                    		
+	                    		serializer.startTag(null, "LiveTime");
+	                    		serializer.text("PT"+event.Detector.MS.Get_AcqTime()+".0S");
+	                    		serializer.endTag(null, "LiveTime");
+	                    		
+	                    		serializer.startTag(null, "SourceType");
+	                    		serializer.text("Item");
+	                    		serializer.endTag(null, "SourceType");
+	                    		
+	                    		serializer.startTag(null, "ChannelData");
+	                    		serializer.text(event.Detector.MS.ToString_());
+	                    		serializer.endTag(null, "ChannelData");	                    	               
+                    		serializer.endTag(null, "Spectrum");
+                    		//
+                    		
+                    		// Mesurement spectrum
+                    		serializer.startTag(null, "Spectrum");
+                    		serializer.attribute(null,"CalibrationIDs" , "en");
+	                    		serializer.startTag(null, "StartTime");
+	                    		serializer.text(event.Detector.BG.Get_MesurementDate());
+	                    		serializer.endTag(null, "StartTime");
+	                    		
+	                    		serializer.startTag(null, "RealTime");
+	                    		serializer.text("PT"+event.Detector.BG.Get_AcqTime()+".0S");
+	                    		serializer.endTag(null, "RealTime");
+	                    		
+	                    		serializer.startTag(null, "LiveTime");
+	                    		serializer.text("PT"+event.Detector.BG.Get_AcqTime()+".0S");
+	                    		serializer.endTag(null, "LiveTime");
+	                    		
+	                    		serializer.startTag(null, "SourceType");
+	                    		serializer.text("Item");
+	                    		serializer.endTag(null, "SourceType");
+	                    		
+	                    		serializer.startTag(null, "ChannelData");
+	                    		serializer.text(event.Detector.BG.ToString_());
+	                    		serializer.endTag(null, "ChannelData");	                    	               
+                    		serializer.endTag(null, "Spectrum");
+                    		//
+	                    serializer.endTag(null, "Measurement");        
+	                    //-----------
+	                    serializer.startTag(null, "AnalysisResults");                    
+	                    	serializer.startTag(null, "ThreatDescription");
+	                    	serializer.text("None");
+	                    	serializer.endTag(null, "ThreatDescription");
+	                    	
+	                    	serializer.startTag(null, "NuclideAnalysis");
+	                    		serializer.attribute(null, "ActivityUnits", "Bq");
+	                    		
+	                    		for(int i=0; i<event.Detected_Isotope.size(); i++){
+		                    		serializer.startTag(null, "Nuclide");
+		                    			serializer.startTag(null, "NuclideName");
+		                    			serializer.text(event.Detected_Isotope.get(i).isotopes);
+		                    			serializer.endTag(null, "NuclideName");
+		                    			
+		                    			serializer.startTag(null, "NuclideType");
+	                    				serializer.text(event.Detected_Isotope.get(i).Class);
+		                    			serializer.endTag(null, "NuclideType");
+		                    			
+		                    			int RoiCnt = 0;
+		                    			for(int q=0; q<event.Detected_Isotope.get(i).FoundPeaks.size(); q++)
+		                    			{
+		                    				RoiCnt += Get_RoiCount(event.Detector.MS.ToInteger(),
+		                    						                   (int)(Energy_to_Channel(event.Detected_Isotope.get(i).FoundPeaks.get(q).Energy*0.94, event.Detector.EnergyFittingArguments)),
+		                    						                   (int)(Energy_to_Channel(event.Detected_Isotope.get(i).FoundPeaks.get(q).Energy*1.6, event.Detector.EnergyFittingArguments)));
+		                    			}
+		                    			serializer.startTag(null, "NuclideActivity");
+		                				serializer.text(String.valueOf(RoiCnt));
+		                				serializer.endTag(null, "NuclideActivity");
+		                				
+		                				serializer.startTag(null, "NuclideIDConfidenceIndication");
+	                					serializer.text(String.valueOf((int)event.Detected_Isotope.get(i).Confidence_Level));
+	                					serializer.endTag(null, "NuclideIDConfidenceIndication");
+		                				
+	                					serializer.startTag(null, "NuclideIDConfidenceDescription");
+	                					serializer.text("Medium");
+	                					serializer.endTag(null, "NuclideIDConfidenceDescription");
+		                    		serializer.endTag(null, "Nuclide");
+	                    		}
+	                    	serializer.endTag(null, "NuclideAnalysis");
+	                    serializer.endTag(null, "AnalysisResults");
+	                    
+	                    //-----------
+	                    serializer.startTag(null, "Calibration");        
+	                    	serializer.attribute(null, "EnergyUnits", "keV");		                    
+		                    serializer.attribute(null, "ID", "en");
+		                    serializer.attribute(null, "Type", "Energy");
+		                    
+		                    serializer.startTag(null, "Equation");
+			                    serializer.attribute(null, "Form", "Term0+(Term1*Ch)+(Term0*(Ch^2))");
+			                    serializer.attribute(null, "Model", "Polynomial");
+			                    
+			                    serializer.startTag(null, "Coefficients");
+            						serializer.text(event.Detector.EnergyFittingArguments[2]+" "+event.Detector.EnergyFittingArguments[1]+" "+event.Detector.EnergyFittingArguments[0]);
+            					serializer.endTag(null, "Coefficients");
+            					
+            					serializer.startTag(null, "CovarianceMatrix");
+            						serializer.text(event.Detector.EnergyFittingArguments[2]+" "+event.Detector.EnergyFittingArguments[1]+" "+event.Detector.EnergyFittingArguments[0]);
+        						serializer.endTag(null, "CovarianceMatrix");
+        					serializer.endTag(null, "Equation");
+	                    serializer.endTag(null, "Calibration");
+	                    ///------------------------
+	                    
+	                    
+                    serializer.endTag(null, "N42InstrumentData");
+                    serializer.endDocument();
+                    //write xml data into the FileOutputStream
+                    serializer.flush();
+                    //finally we close the file stream
+                    fileos.close();
+                    
+           
+                 
+            } catch (Exception e) {
+                    Log.e("Exception","error occurred while creating xml file");
+            }
+	        return newxmlfile.getAbsolutePath();
+		}
+		public static EventData ReadXML_ANSI42(String FilePath) throws SAXException, IOException, ParserConfigurationException{
+			
+			EventData Result = new EventData();
+			
+			
+			File xml_file = null;        
+	        xml_file = new File(FilePath);
+	        if(xml_file.isFile() == false) return Result;
+	        
+	        
+	        DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+	        org.w3c.dom.Document doc = builder.parse(xml_file);
+	        
+	        NodeList node = doc.getElementsByTagName("InstrumentID");	       
+	        if(node.getLength() == 0) throw new SAXException(); 
+	        
+	        Result.Instrument_SerialNumber = node.item(0).getTextContent();
+	        
+	        node = doc.getElementsByTagName("Coordinates");	        	        
+	        if(node.item(0).getTextContent() != ""){
+	        	Result.GPS_Latitude = Double.valueOf(NcLibrary.Separate_EveryDash2(node.item(0).getTextContent(),' ').get(0));
+	        	Result.GPS_Longitude = Double.valueOf(NcLibrary.Separate_EveryDash2(node.item(0).getTextContent(),' ').get(1));
+	        }
+	        
+	        node = doc.getElementsByTagName("ItemReferenceDate");	        	        	       
+        	Result.Event_Date = NcLibrary.Separate_EveryDash2(node.item(0).getTextContent(),'T').get(0);
+        	Result.StartTime = NcLibrary.Separate_EveryDash2(node.item(0).getTextContent(),'T').get(1);
+	        
+        	//-------------------- Spectrum
+        	
+        	node = doc.getElementsByTagName("RealTime");
+        	String temp = node.item(0).getTextContent();
+        	temp = temp.replace("PT", "");
+        	temp = temp.replace(".0S", "");
+        	int acqtime = Integer.valueOf(temp);
+        	
+        	temp = node.item(1).getTextContent();
+        	temp = temp.replace("PT", "");
+        	temp = temp.replace(".0S", "");        	
+        	int bg_acqtime = Integer.valueOf(temp);
+        	
+        	
+        	node = doc.getElementsByTagName("ChannelData");
+        	int[] ch = NcLibrary.Separate_EveryIndex(node.item(0).getTextContent(), ' ');
+        	Result.Detector.MS.Set_Spectrum(ch, acqtime);
+        	
+        	ch = NcLibrary.Separate_EveryIndex(node.item(1).getTextContent(), ' ');
+        	Result.Detector.BG.Set_Spectrum(ch, bg_acqtime);
+        	
+        	node = doc.getElementsByTagName("StartTime");
+        	Result.Detector.BG.Set_MeasurementDate( node.item(1).getTextContent() );
+        	
+        	//-------------------------------------
+        	
+        	Vector<Isotope> tempIsoDB= new Vector<Isotope>();
+        	
+        	node = doc.getElementsByTagName("NuclideName");
+        	for(int i=0; i<node.getLength(); i++){
+        		Isotope tempIso = new Isotope();
+        		tempIso.isotopes = node.item(i).getTextContent();
+        		tempIsoDB.add(tempIso);
+        	}
+        	
+        	node = doc.getElementsByTagName("NuclideType");
+        	for(int i=0; i<node.getLength(); i++){
+        		tempIsoDB.get(i).Class =  node.item(i).getTextContent();        		
+        	}
+        	
+        	node = doc.getElementsByTagName("NuclideIDConfidenceIndication");
+        	for(int i=0; i<node.getLength(); i++){
+        		tempIsoDB.get(i).Confidence_Level =  Double.valueOf(node.item(i).getTextContent());        		
+        	}
+        	
+        	node = doc.getElementsByTagName("NuclideActivity");
+        	for(int i=0; i<node.getLength(); i++){
+        		int[] dr = NcLibrary.Separate_EveryIndex(node.item(i).getTextContent(), ' ');
+        		
+        		tempIsoDB.get(i).DoseRate = dr[0]/acqtime;
+        		tempIsoDB.get(i).DoseRate_S = String.valueOf(dr[0]/acqtime)+" Bq";
+        		
+        	}
+        	
+        	Result.Detected_Isotope = tempIsoDB;
+        	Result.Doserate_unit = "Bq";
+        	///----------------
+        	node = doc.getElementsByTagName("Coefficients");
+        	Vector<String> coeff = NcLibrary.Separate_EveryDash2(node.item(0).getTextContent(), ' ');
+        	
+        	Result.Detector.MS.Set_Coefficients(Double.valueOf(2), Double.valueOf(1), Double.valueOf(0));
+        	
+        	Result.Detector.BG.Set_Coefficients(Double.valueOf(2), Double.valueOf(1), Double.valueOf(0));
+        	
+        	Result.Detector.EnergyFittingArguments[0] = Double.valueOf(2);
+        	Result.Detector.EnergyFittingArguments[1] = Double.valueOf(1);
+        	Result.Detector.EnergyFittingArguments[2] = Double.valueOf(0);
+        	
+        	
+			return Result;
+		
+		}
+	}
+	public static String Get_AppVersion(Context context)
+	{
+		String version;
+		try {
+			PackageInfo i = context.getPackageManager().getPackageInfo(context.getPackageName(), 0);
+			version = i.versionName;
+			return version;
+		} catch(NameNotFoundException e) { 
+			return null;
+		}
+		
+	}
+	public static boolean IsWifiAvailable(Context context)
+		{
+			ConnectivityManager m_NetConnectMgr= (ConnectivityManager)context.getSystemService(Context.CONNECTIVITY_SERVICE);
+			boolean bConnect = false;
+			try
+			{
+				if( m_NetConnectMgr == null ) return false;
+	
+				NetworkInfo info = m_NetConnectMgr.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+				bConnect = (info.isAvailable() && info.isConnected());
+	
+			}
+			catch(Exception e)
+			{
+				return false;
+			}
+	
+			return bConnect;
+		}
+
+	public static boolean Is3GAvailable(Context context)
+	{  
+		ConnectivityManager m_NetConnectMgr= (ConnectivityManager)context.getSystemService(Context.CONNECTIVITY_SERVICE);
+		boolean bConnect = false;
+		try
+		{
+			if( m_NetConnectMgr == null ) return false;
+			NetworkInfo info = m_NetConnectMgr.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
+			bConnect = (info.isAvailable() && info.isConnected());
+		}
+		catch(Exception e)
+		{
+			return false;
+		}
+
+		return bConnect;
+	}
+
+}

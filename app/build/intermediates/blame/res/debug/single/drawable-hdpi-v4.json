@@ -1,0 +1,542 @@
+[
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\setup_mode.png",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\setup_mode.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\panel_bg3.png",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\panel_bg3.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_menu_copy_mtrl_am_alpha.png",
+        "source": "C:\\Users\\tuanp\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\04b7b886f13d5ccb942c9e3c00b82f6f\\res\\drawable-hdpi-v4\\abc_ic_menu_copy_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_star_black_16dp.png",
+        "source": "C:\\Users\\tuanp\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\04b7b886f13d5ccb942c9e3c00b82f6f\\res\\drawable-hdpi-v4\\abc_ic_star_black_16dp.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_text_select_handle_right_mtrl_light.png",
+        "source": "C:\\Users\\tuanp\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\04b7b886f13d5ccb942c9e3c00b82f6f\\res\\drawable-hdpi-v4\\abc_text_select_handle_right_mtrl_light.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\timeup.xml",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\timeup.xml"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\launchersettingguide1.png",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\launchersettingguide1.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\launcherupdateguide3.png",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\launcherupdateguide3.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\play.png",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\play.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png",
+        "source": "C:\\Users\\tuanp\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\04b7b886f13d5ccb942c9e3c00b82f6f\\res\\drawable-hdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\panel_bg2.png",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\panel_bg2.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\bar.png",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\bar.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\notification_bg_normal_pressed.9.png",
+        "source": "C:\\Users\\tuanp\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\e0c1a408dd1e8edc1da81dd75b60e594\\res\\drawable-hdpi-v4\\notification_bg_normal_pressed.9.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_list_selector_disabled_holo_dark.9.png",
+        "source": "C:\\Users\\tuanp\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\04b7b886f13d5ccb942c9e3c00b82f6f\\res\\drawable-hdpi-v4\\abc_list_selector_disabled_holo_dark.9.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\background.jpg",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\background.jpg"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\line.xml",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\line.xml"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\bluetooth_event.png",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\bluetooth_event.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_tab_indicator_mtrl_alpha.9.png",
+        "source": "C:\\Users\\tuanp\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\04b7b886f13d5ccb942c9e3c00b82f6f\\res\\drawable-hdpi-v4\\abc_tab_indicator_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_btn_radio_to_on_mtrl_000.png",
+        "source": "C:\\Users\\tuanp\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\04b7b886f13d5ccb942c9e3c00b82f6f\\res\\drawable-hdpi-v4\\abc_btn_radio_to_on_mtrl_000.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\right.png",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\right.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\design_ic_visibility.png",
+        "source": "C:\\Users\\tuanp\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.1.1.aar\\f2dba9b011a39e2bed5db616f6dd05b3\\res\\drawable-hdpi-v4\\design_ic_visibility.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\picker_top.png",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\picker_top.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\logo.png",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\logo.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_text_select_handle_left_mtrl_dark.png",
+        "source": "C:\\Users\\tuanp\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\04b7b886f13d5ccb942c9e3c00b82f6f\\res\\drawable-hdpi-v4\\abc_text_select_handle_left_mtrl_dark.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\timedown.xml",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\timedown.xml"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_textfield_default_mtrl_alpha.9.png",
+        "source": "C:\\Users\\tuanp\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\04b7b886f13d5ccb942c9e3c00b82f6f\\res\\drawable-hdpi-v4\\abc_textfield_default_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\time_up_focus.png",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\time_up_focus.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\reach_back.png",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\reach_back.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_list_divider_mtrl_alpha.9.png",
+        "source": "C:\\Users\\tuanp\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\04b7b886f13d5ccb942c9e3c00b82f6f\\res\\drawable-hdpi-v4\\abc_list_divider_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\icon.png",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\icon.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_menu_selectall_mtrl_alpha.png",
+        "source": "C:\\Users\\tuanp\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\04b7b886f13d5ccb942c9e3c00b82f6f\\res\\drawable-hdpi-v4\\abc_ic_menu_selectall_mtrl_alpha.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\design_ic_visibility_off.png",
+        "source": "C:\\Users\\tuanp\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.1.1.aar\\f2dba9b011a39e2bed5db616f6dd05b3\\res\\drawable-hdpi-v4\\design_ic_visibility_off.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\bluetooth_bp_off.png",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\bluetooth_bp_off.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\notification_bg_normal.9.png",
+        "source": "C:\\Users\\tuanp\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\e0c1a408dd1e8edc1da81dd75b60e594\\res\\drawable-hdpi-v4\\notification_bg_normal.9.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\bnc_logo.png",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\bnc_logo.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\btn_color_selector1.xml",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\btn_color_selector1.xml"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\border2.xml",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\border2.xml"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\msg_inrange.png",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\msg_inrange.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\id_mode.png",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\id_mode.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\picker_bottom.png",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\picker_bottom.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_text_select_handle_middle_mtrl_dark.png",
+        "source": "C:\\Users\\tuanp\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\04b7b886f13d5ccb942c9e3c00b82f6f\\res\\drawable-hdpi-v4\\abc_text_select_handle_middle_mtrl_dark.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\btn_color_selector2.xml",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\btn_color_selector2.xml"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_list_selector_disabled_holo_light.9.png",
+        "source": "C:\\Users\\tuanp\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\04b7b886f13d5ccb942c9e3c00b82f6f\\res\\drawable-hdpi-v4\\abc_list_selector_disabled_holo_light.9.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\start.png",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\start.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_popup_background_mtrl_mult.9.png",
+        "source": "C:\\Users\\tuanp\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\04b7b886f13d5ccb942c9e3c00b82f6f\\res\\drawable-hdpi-v4\\abc_popup_background_mtrl_mult.9.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_menu_share_mtrl_alpha.png",
+        "source": "C:\\Users\\tuanp\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\04b7b886f13d5ccb942c9e3c00b82f6f\\res\\drawable-hdpi-v4\\abc_ic_menu_share_mtrl_alpha.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_menu_hardkey_panel_mtrl_mult.9.png",
+        "source": "C:\\Users\\tuanp\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\04b7b886f13d5ccb942c9e3c00b82f6f\\res\\drawable-hdpi-v4\\abc_menu_hardkey_panel_mtrl_mult.9.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\bluetooth_map_off.png",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\bluetooth_map_off.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\launcherupdateguide2.png",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\launcherupdateguide2.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\msg_rad.png",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\msg_rad.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_menu_cut_mtrl_alpha.png",
+        "source": "C:\\Users\\tuanp\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\04b7b886f13d5ccb942c9e3c00b82f6f\\res\\drawable-hdpi-v4\\abc_ic_menu_cut_mtrl_alpha.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_text_select_handle_middle_mtrl_light.png",
+        "source": "C:\\Users\\tuanp\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\04b7b886f13d5ccb942c9e3c00b82f6f\\res\\drawable-hdpi-v4\\abc_text_select_handle_middle_mtrl_light.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\image_press.xml",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\image_press.xml"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_scrubber_control_off_mtrl_alpha.png",
+        "source": "C:\\Users\\tuanp\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\04b7b886f13d5ccb942c9e3c00b82f6f\\res\\drawable-hdpi-v4\\abc_scrubber_control_off_mtrl_alpha.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\notification_bg_low_normal.9.png",
+        "source": "C:\\Users\\tuanp\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\e0c1a408dd1e8edc1da81dd75b60e594\\res\\drawable-hdpi-v4\\notification_bg_low_normal.9.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\pause1.png",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\pause1.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_scrubber_control_to_pressed_mtrl_000.png",
+        "source": "C:\\Users\\tuanp\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\04b7b886f13d5ccb942c9e3c00b82f6f\\res\\drawable-hdpi-v4\\abc_scrubber_control_to_pressed_mtrl_000.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\tab_line.xml",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\tab_line.xml"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\launchersettingguide2.png",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\launchersettingguide2.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\btn_color_selector.xml",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\btn_color_selector.xml"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\video.png",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\video.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\picker_top_on.png",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\picker_top_on.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_star_half_black_36dp.png",
+        "source": "C:\\Users\\tuanp\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\04b7b886f13d5ccb942c9e3c00b82f6f\\res\\drawable-hdpi-v4\\abc_ic_star_half_black_36dp.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_btn_radio_to_on_mtrl_015.png",
+        "source": "C:\\Users\\tuanp\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\04b7b886f13d5ccb942c9e3c00b82f6f\\res\\drawable-hdpi-v4\\abc_btn_radio_to_on_mtrl_015.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\msg_back.png",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\msg_back.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\pause.png",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\pause.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\healthy_threshold.png",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\healthy_threshold.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_list_pressed_holo_light.9.png",
+        "source": "C:\\Users\\tuanp\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\04b7b886f13d5ccb942c9e3c00b82f6f\\res\\drawable-hdpi-v4\\abc_list_pressed_holo_light.9.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\line2.xml",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\line2.xml"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_textfield_search_activated_mtrl_alpha.9.png",
+        "source": "C:\\Users\\tuanp\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\04b7b886f13d5ccb942c9e3c00b82f6f\\res\\drawable-hdpi-v4\\abc_textfield_search_activated_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\notify_panel_notification_icon_bg.png",
+        "source": "C:\\Users\\tuanp\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\e0c1a408dd1e8edc1da81dd75b60e594\\res\\drawable-hdpi-v4\\notify_panel_notification_icon_bg.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_list_focused_holo.9.png",
+        "source": "C:\\Users\\tuanp\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\04b7b886f13d5ccb942c9e3c00b82f6f\\res\\drawable-hdpi-v4\\abc_list_focused_holo.9.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\null_guide_img.png",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\null_guide_img.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\launchersettingguide.png",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\launchersettingguide.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ab_share_pack_mtrl_alpha.9.png",
+        "source": "C:\\Users\\tuanp\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\04b7b886f13d5ccb942c9e3c00b82f6f\\res\\drawable-hdpi-v4\\abc_ab_share_pack_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\log_background.jpg",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\log_background.jpg"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\msg_forward.png",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\msg_forward.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\notification_bg_low_pressed.9.png",
+        "source": "C:\\Users\\tuanp\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\e0c1a408dd1e8edc1da81dd75b60e594\\res\\drawable-hdpi-v4\\notification_bg_low_pressed.9.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\line3.xml",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\line3.xml"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\picker_center.png",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\picker_center.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\time_up.png",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\time_up.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\picker_bottom_on.png",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\picker_bottom_on.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_star_black_36dp.png",
+        "source": "C:\\Users\\tuanp\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\04b7b886f13d5ccb942c9e3c00b82f6f\\res\\drawable-hdpi-v4\\abc_ic_star_black_36dp.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_list_pressed_holo_dark.9.png",
+        "source": "C:\\Users\\tuanp\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\04b7b886f13d5ccb942c9e3c00b82f6f\\res\\drawable-hdpi-v4\\abc_list_pressed_holo_dark.9.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\time_down_focus.png",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\time_down_focus.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_spinner_mtrl_am_alpha.9.png",
+        "source": "C:\\Users\\tuanp\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\04b7b886f13d5ccb942c9e3c00b82f6f\\res\\drawable-hdpi-v4\\abc_spinner_mtrl_am_alpha.9.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\time_down.png",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\time_down.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\login_button.xml",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\login_button.xml"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\border.xml",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\border.xml"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\rec.png",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\rec.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_text_select_handle_right_mtrl_dark.png",
+        "source": "C:\\Users\\tuanp\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\04b7b886f13d5ccb942c9e3c00b82f6f\\res\\drawable-hdpi-v4\\abc_text_select_handle_right_mtrl_dark.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\bluetooth_bp_running.png",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\bluetooth_bp_running.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_cab_background_top_mtrl_alpha.9.png",
+        "source": "C:\\Users\\tuanp\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\04b7b886f13d5ccb942c9e3c00b82f6f\\res\\drawable-hdpi-v4\\abc_cab_background_top_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_star_half_black_48dp.png",
+        "source": "C:\\Users\\tuanp\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\04b7b886f13d5ccb942c9e3c00b82f6f\\res\\drawable-hdpi-v4\\abc_ic_star_half_black_48dp.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\start1.png",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\start1.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\voice.png",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\voice.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\bluetooth_bg.png",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\bluetooth_bg.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_scrubber_primary_mtrl_alpha.9.png",
+        "source": "C:\\Users\\tuanp\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\04b7b886f13d5ccb942c9e3c00b82f6f\\res\\drawable-hdpi-v4\\abc_scrubber_primary_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\radresponder.png",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\radresponder.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\launcherupdateguide1.png",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\launcherupdateguide1.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\alram.png",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\alram.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\bluetooth_map_running.png",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\bluetooth_map_running.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\libray.png",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\libray.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_text_select_handle_left_mtrl_light.png",
+        "source": "C:\\Users\\tuanp\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\04b7b886f13d5ccb942c9e3c00b82f6f\\res\\drawable-hdpi-v4\\abc_text_select_handle_left_mtrl_light.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_btn_check_to_on_mtrl_015.png",
+        "source": "C:\\Users\\tuanp\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\04b7b886f13d5ccb942c9e3c00b82f6f\\res\\drawable-hdpi-v4\\abc_btn_check_to_on_mtrl_015.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_scrubber_track_mtrl_alpha.9.png",
+        "source": "C:\\Users\\tuanp\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\04b7b886f13d5ccb942c9e3c00b82f6f\\res\\drawable-hdpi-v4\\abc_scrubber_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_star_half_black_16dp.png",
+        "source": "C:\\Users\\tuanp\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\04b7b886f13d5ccb942c9e3c00b82f6f\\res\\drawable-hdpi-v4\\abc_ic_star_half_black_16dp.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\left.png",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\left.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\device.png",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\device.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\bluetooth_map_event.png",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\bluetooth_map_event.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_star_black_48dp.png",
+        "source": "C:\\Users\\tuanp\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\04b7b886f13d5ccb942c9e3c00b82f6f\\res\\drawable-hdpi-v4\\abc_ic_star_black_48dp.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\alarm_mode.png",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\alarm_mode.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_commit_search_api_mtrl_alpha.png",
+        "source": "C:\\Users\\tuanp\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\04b7b886f13d5ccb942c9e3c00b82f6f\\res\\drawable-hdpi-v4\\abc_ic_commit_search_api_mtrl_alpha.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_menu_paste_mtrl_am_alpha.png",
+        "source": "C:\\Users\\tuanp\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\04b7b886f13d5ccb942c9e3c00b82f6f\\res\\drawable-hdpi-v4\\abc_ic_menu_paste_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_textfield_activated_mtrl_alpha.9.png",
+        "source": "C:\\Users\\tuanp\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\04b7b886f13d5ccb942c9e3c00b82f6f\\res\\drawable-hdpi-v4\\abc_textfield_activated_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png",
+        "source": "C:\\Users\\tuanp\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\04b7b886f13d5ccb942c9e3c00b82f6f\\res\\drawable-hdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_btn_check_to_on_mtrl_000.png",
+        "source": "C:\\Users\\tuanp\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\04b7b886f13d5ccb942c9e3c00b82f6f\\res\\drawable-hdpi-v4\\abc_btn_check_to_on_mtrl_000.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png",
+        "source": "C:\\Users\\tuanp\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\04b7b886f13d5ccb942c9e3c00b82f6f\\res\\drawable-hdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\name_panel.png",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\name_panel.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\bluetooth_running.png",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\bluetooth_running.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_switch_track_mtrl_alpha.9.png",
+        "source": "C:\\Users\\tuanp\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\04b7b886f13d5ccb942c9e3c00b82f6f\\res\\drawable-hdpi-v4\\abc_switch_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\launcherupdateguide.png",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\launcherupdateguide.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\check_box.xml",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\check_box.xml"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\bluetooth_bp_event.png",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\bluetooth_bp_event.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\battery.png",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\battery.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\battery1.png",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\battery1.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\camera.png",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\camera.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_list_longpressed_holo.9.png",
+        "source": "C:\\Users\\tuanp\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\04b7b886f13d5ccb942c9e3c00b82f6f\\res\\drawable-hdpi-v4\\abc_list_longpressed_holo.9.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\bluetooth_off.png",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\bluetooth_off.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_textfield_search_default_mtrl_alpha.9.png",
+        "source": "C:\\Users\\tuanp\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\04b7b886f13d5ccb942c9e3c00b82f6f\\res\\drawable-hdpi-v4\\abc_textfield_search_default_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\launcherupdate.png",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\launcherupdate.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\image_press_not_focus.xml",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\image_press_not_focus.xml"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\arrow.png",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\arrow.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\devicebp.png",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\devicebp.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\text_color.xml",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\drawable-hdpi\\text_color.xml"
+    }
+]

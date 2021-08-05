@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/u_information"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/LogInfoTab_ManualID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:text="Manual ID"
+        android:textColor="@color/Black"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <TableLayout
+        android:id="@+id/LogInfoTab_tableRow1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="*" >
+
+        <TableRow
+            android:id="@+id/LogInfoTab_tableRow"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/DarkGray2" >
+
+            <TextView
+                android:id="@+id/LogInfoTab_n1st_row_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingTop="3dp"
+                android:text="@string/event"
+                android:textColor="@color/BrightBlue"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/LogInfoTab_n1st_row_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingTop="3dp"
+                android:text="None"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/LogInfoTab_n1st_row_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingTop="3dp"
+                android:text="@string/date"
+                android:textColor="@color/BrightBlue"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/LogInfoTab_n1st_row_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingTop="3dp"
+                android:text="None"
+                android:textSize="15sp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/LogInfoTab_tableRow2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/DarkGray" >
+
+            <TextView
+                android:id="@+id/LogInfoTab_n2nd_row_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingTop="3dp"
+                android:text="@string/time"
+                android:textColor="@color/BrightBlue"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/LogInfoTab_n2nd_row_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingTop="3dp"
+                android:text="None"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/LogInfoTab_n2nd_row_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingTop="3dp"
+                android:text="@string/alarm_duration"
+                android:textColor="@color/BrightBlue"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/LogInfoTab_n2nd_row_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingTop="3dp"
+                android:text="None"
+                android:textSize="15sp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/LogInfoTab_tableRow3"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/DarkGray2" >
+
+            <TextView
+                android:id="@+id/LogInfoTab_n3rd_row_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingTop="3dp"
+                android:text="@string/s_user"
+                android:textColor="@color/BrightBlue"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/LogInfoTab_n3rd_row_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingTop="3dp"
+                android:text="None"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/LogInfoTab_n3rd_row_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingTop="3dp"
+                android:text="@string/s_location"
+                android:textColor="@color/BrightBlue"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/LogInfoTab_n3rd_row_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingTop="3dp"
+                android:text="None"
+                android:textSize="15sp" />
+        </TableRow>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="6dp" />
+
+        <TableRow
+            android:id="@+id/LogInfoTab_tableRow4"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/DarkGray" >
+
+            <TextView
+                android:id="@+id/LogInfoTab_n4th_row_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingTop="3dp"
+                android:text="@string/avg_doserate"
+                android:textColor="@color/BrightBlue"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/LogInfoTab_n4th_row_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingTop="3dp"
+                android:text="None"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/LogInfoTab_n4th_row_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingTop="3dp"
+                android:text="@string/avg_neutron"
+                android:textColor="@color/BrightBlue"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/LogInfoTab_n4th_row_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingTop="3dp"
+                android:text="None"
+                android:textSize="15sp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/LogInfoTab_tableRow5"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/DarkGray2" >
+
+            <TextView
+                android:id="@+id/LogInfoTab_n5th_row_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingTop="3dp"
+                android:text="@string/max_doserate"
+                android:textColor="@color/BrightBlue"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/LogInfoTab_n5th_row_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingTop="3dp"
+                android:text="None"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/LogInfoTab_n5th_row_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingTop="3dp"
+                android:text="@string/max_neutron"
+                android:textColor="@color/BrightBlue"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/LogInfoTab_n5th_row_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingTop="3dp"
+                android:text="None"
+                android:textSize="15sp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/LogInfoTab_tableRow6"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/DarkGray2" >
+
+            <TextView
+                android:id="@+id/LogInfoTab_n6th_row_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingTop="3dp"
+                android:text="@string/latitude"
+                android:textColor="@color/BrightBlue"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/LogInfoTab_n6th_row_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingTop="3dp"
+                android:text="None"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/LogInfoTab_n6th_row_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingTop="3dp"
+                android:text="@string/longitude"
+                android:textColor="@color/BrightBlue"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/LogInfoTab_n6th_row_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingTop="3dp"
+                android:text="None"
+                android:textSize="15sp" />
+        </TableRow>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="15dp" />
+
+        <TableRow
+            android:id="@+id/LogInfoTab_tableRow11"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/DarkGray" >
+
+            <TextView
+                android:id="@+id/LogInfoTab_n5th_row_111"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="3dp"
+                android:text="@string/comment"
+                android:textColor="@color/BrightBlue"
+                android:textSize="16sp" />
+        </TableRow>
+    </TableLayout>
+
+    <EditText
+        android:id="@+id/editT_Comment"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="3dp"
+        android:ems="10"
+        android:inputType="text" >
+
+        <requestFocus />
+    </EditText>
+
+</LinearLayout>

@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2009 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+
+-->
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="app_name">SAM III PeakAbout III</string>
+    <string name="app_version">app_version</string>
+
+    <!-- BluetoothChat -->
+    <string name="send">Send</string>
+    <string name="not_connected">You are not connected to a device</string>
+    <string name="bt_not_enabled_leaving">Bluetooth was not enabled. Leaving Bluetooth Chat.</string>
+    <string name="title_connecting">connecting...</string>
+    <string name="title_connected_to">connected to <xliff:g id="device_name">%1$s</xliff:g></string>
+    <string name="title_not_connected">not connected</string>
+    <string name="bluetooth_fail">Connection failed</string>
+    <string name="bluetooth_reconnect">Do you want to reconnect </string>
+
+    <!-- DeviceListActivity -->
+    <string name="scanning">scanning for devices...</string>
+    <string name="select_device">select a device to connect</string>
+    <string name="none_paired">No devices have been paired</string>
+    <string name="none_found">No devices found</string>
+    <string name="title_paired_devices">Paired Devices</string>
+    <string name="title_other_devices">Other Available Devices</string>
+    <string name="button_scan">Scan for devices</string>
+
+    <!-- Options Menu -->
+    <string name="secure_connect">Connect a device - Secure</string>
+    <string name="insecure_connect">Connect a device - Insecure</string>
+    <string name="discoverable">Make discoverable</string>
+
+    <color name="Black">#1ba2ab</color>
+
+    <string name="pleaseWait">Please Wait</string>
+    <string name="makingConnectionString">Making Connection String</string>
+    <string name="gam_thre_normal">Normal</string>
+    <string name="main_menu1">Bluetooth</string>
+    <string name="main_menu1_1">Mapping Server</string>
+    <string name="main_menu2">Setup &amp; Event</string>
+    <string name="main_menu3">Exit</string>
+    <string name="bg_cali">Background &amp; Calibration</string>
+    <string name="measurement_progress">Measurement in progress...</string>
+    <string name="Calib_time">Calibration measurement time</string>
+
+    <color name="orange">#e18a24</color>
+    <color name="Gray">#636363</color>
+    <color name="DarkGray">#0d0d0d</color>
+    <color name="DarkGray2">#111111</color>
+    <color name="White">#ffffff</color>
+    <color name="Brown">#AD7D44</color>
+    <color name="WhiteGray2">#838383</color>
+    <color name="WhiteGray3">#C0C0C0</color>
+
+    <string name="IsoLib_list">IsoLib_list</string>
+
+    <color name="RealBlack">#000000</color>
+    <color name="WhiteGray">#e1e1e1</color>
+    <color name="BrightBlue">#35b5e5</color>
+    <color name="TransparentBrightBlue">#9900779F</color>
+    <color name="Transparent">#0000779F</color>
+    <color name="WhiteGrayGauge">#9D9E9E</color>
+
+    <string name="healthy_threshold">healthy_threshold</string>
+    <string name="Paired">Paired</string>
+    <string name="Send_xml">Send file</string>
+    <string name="login">Login</string>
+    <string name="library">Library</string>
+    <string name="sam_battery">SAM Battery</string>
+    <string name="neutron">Neutron</string>
+    <string name="alarm_mode">Alarm mode</string>
+    <string name="setup_title_user">User Name</string>
+    <string name="setup_user_default">None</string>
+    <string name="setup_location_default">None</string>
+    <string name="setup_summary_user">Setup name of operator</string>
+    <string name="setup_title_search_location">Search Location</string>
+    <string name="setup_summary_search_location">Setup search location</string>
+    <string name="setup_title_alarm_mode">Set Alarm Mode</string>
+    <string name="setup_summary_alarm_mode">Setup alarm mode &amp; threshold</string>
+    <string name="setup_title_neu_threshold">Neutron Threshold</string>
+    <string name="setup_summary_neu_threshold">Setup neutron alarm threshold (CPS)</string>
+    <string name="setup_title_health_thre">Health Safety Threshold</string>
+    <string name="setup_summary_health_thre">Set Healthy Threshold (uSv/h)</string>
+    <string name="setup_title_ringtone">Alarm ringtone</string>
+    <string name="setup_summary_ringtone">Setup alarm ringtone</string>
+    <string name="alarm">Alarm</string>
+    <string name="background_measurement">Background Measurement</string>
+    <string name="setup_title_bg">Measurement Time</string>
+    <string name="setup_summary_bg">Setup measurement time</string>
+    <string name="calibration">Calibration</string>
+    <string name="calibration_measurement">Energy Calibration Measurement</string>
+    <string name="setup_title_cali">Calibration Count</string>
+    <string name="setup_summary_cali">Setup calibration count (unit: n x 1000)</string>
+    <string name="setup_title_lib">Library List</string>
+    <string name="setup_summary_lib">Select Library</string>
+    <string name="unit">Unit</string>
+    <string name="setup_title_dr_unit">Dose Rate Unit</string>
+    <string name="setup_dr_unit_key">Dose Rate Unit Key</string>
+    <string name="setup_summary_dr_unit">Setup dose rate unit</string>
+    <string name="about">About</string>
+    <string name="setup_title_device_info">Device Information</string>
+    <string name="setup_summary_device_info">S/W version and device information</string>
+    <string name="setup_title_sw_version">S/W Version</string>
+    <string name="setup_title_login_info">User Login Information</string>
+    <string name="setup_title_last_login">Last login user</string>
+    <string name="setup_title_last_login_date">Last login date/time</string>
+    <string name="setup_title_last_paired">Last Paired Device</string>
+    <string name="admin_pw">Administrator Password</string>
+    <string name="password">Password</string>
+    <string name="setup_title_fix_alarm">Fixed Alarm Mode</string>
+    <string name="setup_summary_fix_alarm">Setup fixed alarm threshold (CPS)</string>
+    <string name="setup_title_var_alarm">Variable Alarm Mode</string>
+    <string name="setup_summary_var_alarm">Setup variable alarm threshold (Sigma)</string>
+    <string name="setup_summary_disc">Setup Discrimination</string>
+    <string name="setup_summary_low_disc">Setup Low Discrimination (Channel)</string>
+    <string name="setup_summary_upper_disc">Setup Upper Discrimination (Channel)</string>
+    <string name="setup_title_default_time">Default Time</string>
+    <string name="setup_summary_default_time">Default measurement time (sec)</string>
+    <string name="setup_title_time_adjust">Real Time Adjust</string>
+    <string name="setup_summary_time_adjust">Increase or decrease during measurement (sec)</string>
+    <string name="setup_title_sequence_mode">Sequential Mode</string>
+    <string name="setup_summary_sequence_mode">Sequential Mode On/Off</string>
+    <string name="setup_title_seq_measurement_time">Measurement Time</string>
+    <string name="setup_summary_seq_measurement_time">Setup Measurement Time (sec)</string>
+    <string name="setup_title_seq_pause_time">Pause time</string>
+    <string name="setup_summary_seq_pause_time">Setup Pause Time between Measurements (sec)</string>
+    <string name="setup_title_sequence_mode_repeat">Number of Measurements</string>
+    <string name="setup_summary_sequence_mode_repeat">Setup Number of Measurements</string>
+    <string name="not_found_calibration">Manual Calibration information is not found. Execute Manual Calibration</string>
+    <string name="auto_cali_success">Auto Calibration completed!\nPlease Perform a Background Check.</string>
+    <string name="auto_cali_fail">Auto calibration failed</string>
+    <string name="auto_cali_gain_shift">Gain shift is out of bound. Please redo CALIBRATION.</string>
+    <string name="auto_cali_2nd_fail">2nd Auto Calibration failed. Redo manual calibration</string>
+    <string name="auto_cali_k40_insufficient">Auto Calibration failed: K-40 peak count is insufficient. 2nd Auto Calibration in progress</string>
+    <string name="not_event_file"></string>
+    <string name="load_event_file">Import N42 File</string>
+    <string name="write_db">Write to Database</string>
+    <string name="wait_while_connect">Please wait while connecting...</string>
+    <string name="now_running">Now Running</string>
+    <string name="s_user">User</string>
+    <string name="admin">Administrator</string>
+    <string name="fixed">Fixed</string>
+    <string name="variable">Variable</string>
+    <string name="gauge">Gauge</string>
+    <string name="finder">Finder</string>
+    <string name="alarm_duration">Alarm duration</string>
+    <string name="avg_doserate">Avg. Dose rate</string>
+    <string name="avg_neutron">Avg. Neutron</string>
+    <string name="max_doserate">Max. Dose rate</string>
+    <string name="max_neutron">Max. Neutron</string>
+    <string name="radionuclide_id">Radionuclide ID</string>
+    <string name="recorder">Recorder</string>
+    <string name="video">Video</string>
+    <string name="photo">Photo</string>
+    <string name="latitude">Latitude</string>
+    <string name="longitude">Longitude</string>
+    <string name="close">Close</string>
+    <string name="rec">Recoder</string>
+    <string name="acq_time">Acq Time</string>
+    <string name="s_location">Location</string>
+    <string name="avg_cps">Avg. CPS</string>
+    <string name="total_count">Total Count</string>
+    <string name="sec">sec</string>
+    <string name="confidence_level">Confidence Level</string>
+    <string name="dose_rate">Dose Rate</string>
+    <string name="date">Date</string>
+    <string name="time">Time</string>
+    <string name="cps">CPS</string>
+    <string name="cancel">Cancel</string>
+    <string name="success">Success</string>
+    <string name="not_success">Not Success</string>
+    <string name="failed">Failed</string>
+    <string name="nuclide">Nuclide</string>
+    <string name="photo_and_video">Photo and Video</string>
+    <string name="event_id">Event ID</string>
+    <string name="event_info">Event Info.</string>
+    <string name="photo_video">Photo/Video</string>
+    <string name="event">Event</string>
+    <string name="comment">Comment</string>
+    <string name="u_information">INFORMATION</string>
+    <string name="detected_nuclide">DETECTED NUCLIDE</string>
+    <string name="auto_cali_progress">Auto calibration in progress</string>
+    <string name="setup">Setup</string>
+    <string name="event_log">Event Log</string>
+    <string name="event_analysis">Event Analysis</string>
+    <string name="iso_identification">Isotope Identification</string>
+    <string name="activity">Activity</string>
+    <string name="transmit">Transmit</string>
+    <string name="transmit_N42">Transmit N42 file</string>
+    <string name="send_toRCBCenter_event">Do you want to transmit the event to a reach-back center?</string>
+    <string name="siren">Siren</string>
+    <string name="morning_call">Morning call</string>
+    <string name="door_bell">Door bell</string>
+    <string name="trumpet">Trumpet</string>
+    <string name="telephone_ring">Telephone ring</string>
+    <string name="beep">Beep</string>
+    <string name="background">Background</string>
+    <string name="s_calibration">Calibration</string>
+    <string name="manual_identification">Manual Identification</string>
+    <string name="login_user">User</string>
+    <string name="discrimination">Discrimination</string>
+    <string name="low_discrimination">Low Discrimination</string>
+    <string name="upper_discrimination">Upper Discrimination</string>
+    <string name="setup_title_export_event">Transmit event</string>
+    <string name="setup_summary_export_event">Setup e-mail account of Reach-Back center</string>
+    <string name="e_mail">E-Mail</string>
+    <string name="e_mail_account">E-mail account</string>
+    <string name="sender_email_address">Sender</string>
+    <string name="recv_email_address">Reach-Back account</string>
+    <string name="address">Address</string>
+    <string name="server">Server</string>
+    <string name="port">Port</string>
+    <string name="email_transmit_success">Transmit success</string>
+    <string name="email_transmit_failed">Transmit failed</string>
+    <string name="plz_input_all_info">E-mail account information is missed. Please complete email account setup. </string>
+    <string name="email_info_fail">Incorrect E-mail account information. Please complete email account of Reach-Back center in Setup menu.</string>
+    <string name="mapping_server">Mapping Server</string>
+    <string name="server_ip">IP Address</string>
+    <string name="setup_server_ip">Setup server Address</string>
+    <string name="sw_update_byftp">Latest version of SAM III software is available. Please download it from setup\\device information\\ </string>
+    <string name="down_new_version">SAM III SW upgrade</string>
+    <string name="down_new_version_summary">Download latest SAM III SW</string>
+    <string name="internet_not">Internet not available</string>
+    <string name="energy_calibration">Energy Calibration</string>
+
+    <!-- radresponser -->
+
+
+    <string name="rad_response_submit_success">success</string>
+    <string name="rad_response_submit_failure">fail</string>
+    <string name="rad_response_question_transmission_system">Select a Transfer Method</string>
+    <string name="rad_response_data_transmitting">transmitting...</string>
+
+    <string name="rad_response_option_top_title">RADRESPONDER</string>
+    <string name="rad_response_option_title">RadResponder Mode</string>
+    <string name="rad_response_option_summary">Setup RadResponder Mode</string>
+    <string name="rad_response_used_not_content_title">USE/ NOT USED</string>
+    <string name="rad_response_eventlist_content_title">EVENT</string>
+    <string name="rad_response_used_not_title">On/Off</string>
+    <string name="rad_response_used_not_summary">RadResponder On/Off</string>
+    <string name="rad_response_used_not_key">use_yes_or_not</string>
+    <string name="rad_response_used">USE</string>
+    <string name="rad_response_used_not">NOT USED</string>
+    <string name="rad_response_eventlist_title">Event Type</string>
+    <string name="rad_response_eventlist1">Emergency Response</string>
+    <string name="rad_response_eventlist2">Testing/Training</string>
+    <string name="rad_response_eventlist11">Emergency Response</string>
+    <string name="rad_response_eventlist22">Testing/Training</string>
+    <string name="rad_response_eventlist3">Vigilant Guardian 17 Exercise RDD</string>
+    <string name="rad_response_eventlist4">Vigilant Guardian 17 Exercise US/R</string>
+    <string name="rad_response_eventlist_summary">Select Event Type</string>
+    <string name="rad_response_option_key">radResponder</string>
+    <string name="rad_response_eventlist_key">eventlist</string>
+    <string name="rad_response_wifi_connect">wifi connected</string>
+    <string name="rad_response_wifi_disconnect">wifi disconnected</string>
+    <string name="HardwareName">SAM 950</string>
+    <string name="Usb_Connect_Option">USB</string>
+    <string name="Connect_Option">Connect</string>
+    <string name="g">G</string>
+    <string name="auge">auge</string>
+    <string name="f">F</string>
+    <string name="inder">inder</string>
+    <string name="Favorite"><u>Favorite</u></string>
+    <string name="remove_event"><u>Remove Event</u></string>
+    <string name="measurement">MEASUREMENT</string>
+    <string name="move_forward">MOVE FORWARD</string>
+    <string name="in_range">IN RANGE</string>
+    <string name="move_back">MOVE BACK</string>
+    <string name="danger">DANGER</string>
+    <string name="user_settings">User Settings</string>
+    <string name="administrator_access">Administrator access</string>
+    <string name="administrator_settings">ADMINISTRATOR SETTINGS</string>
+    <string name="p_user_settings">p_user_settings</string>
+    <string name="p_admin">p_admin</string>
+    <string name="SetBackgroundMeasurementMode">SetBackgroundMeasurementMode</string>
+    <string name="SetCalibrationMode">SetCalibrationMode</string>
+    <string name="menu_enable_key">menuEnableKey</string>
+
+    <color name="BrightGreen">#029E97</color>
+
+    <string name="b">B</string>
+    <string name="ackground">ackground</string>
+    <string name="c">C</string>
+    <string name="alibration">alibration</string>
+    <string name="e">E</string>
+    <string name="nergy_calibration">nergy calibration</string>
+
+    <color name="Brown2">#C79F64</color>
+
+    <string name="Connect_Mode_Key">ConnectModeKey</string>
+    <string name="ok">OK</string>
+    <string name="check">OK</string>
+    <string name="delete">DELETE</string>
+    <string name="delete_message">Would you like to delete?</string>
+    <string name="Connect_Mode">Connect Mode</string>
+    <string name="USB">USB</string>
+    <string name="BlueTooth">Bluetooth</string>
+    <string name="Setup_Connect_Mode">Setup Connect Mode</string>
+    <string name="p_ConnectMode">p_ConnectMode</string>
+    <string name="Appalication_Restart_Msg">The connection mode has been changed. Please exit the application and run it again.</string>
+    <string name="disconnect_msg">Disconnect</string>
+    <string name="bluetooth_retry_msg">Bluetooth was not enabled. Try again?</string>
+    <string name="autocalibration_title_msg">Auto Calibration in Progress</string>
+    <string name="autocalibration_progress_msg">Loding...</string>
+    <string name="remove_source_msg1">-WARNING-</string>
+    <string name="remove_source_msg2">Remove Radioactive Sources</string>
+    <string name="start_recoding_msg">Start Recoding</string>
+    <string name="complete_recode_msg">Complete Recode</string>
+    <string name="playing_msg">PLAYING</string>
+    <string name="play_pause_msg">PLAY_PAUSE</string>
+    <string name="reset_msg">RESET</string>
+    <string name="Delete_Rec_File"><u>Remove</u></string>
+    <string name="auto_cali_background_incompatibility">Background reference exceeded.Please collect it again.</string>
+    <string name="initialization_title">DEFAULTS</string>
+    <string name="initialization_sub_title">Restore Defaults</string>
+    <string name="initialization_title_summary">Restore factory defaults</string>
+    <string name="initialization_key">Restore factory defaults key</string>
+    <string name="option_reset_msg_title">Restore Defaults</string>
+    <string name="option_reset_msg_content">Do you want to restore factory Defaults?</string>
+    <string name="IsoLib_List_Key">IsoLib_list_key</string>
+    <string name="Setup_Instrument_Key">Setup_Instrument_Key</string>
+    <string name="Setup_Instrument_Title">Equipment Information</string>
+    <string name="Setup_Instrument_Surmary">Enter equipment information.</string>
+    <string name="Setup_Instrument_Default">SAM950</string>
+    <string name="Radresponder_Emergency_Msg_Title">Emergency Response</string>
+    <string name="Radresponder_Emergency_Msg_Contents">The Event is set as an Emergency Response. Do you wand to transmit to the RadResponder?</string>
+    <string name="Radresponder_GMT_Error_Msg">GMT call error. Please set the time again. (PDA Settings -> Date and Time)</string>
+    <string name="System_Log_Transfer">System Log Transfer</string>
+    <string name="System_Log_Transfer_title">Debug</string>
+    <string name="System_Log_Transfer_content">Send the system log</string>
+    <string name="System_Log_Transfer_Key">System log transfer Key</string>
+    <string name="Send_Error">Send Error</string>
+    <string name="Launcher_Update_GuideMsg">Launcher has not been updated. Please proceed to update.</string>
+    <string name="Launcher_Setting_GuideMsg">Launcher is not set as default. Select HH200 Launcher -> PDA Home button.</string>
+    <string name="XML_Save">Save XML</string>
+    <string name="CPS_ZeroMsg">Please check the equipment.</string>
+    <string name="Default_Cal_Title">Default_Cal</string>
+    <string name="Default_Cal_Contents">Default_Cal_Contents</string>
+    <string name="Default_Cal_Key">Default_Cal_Key</string>
+    <string name="reset_Calibartion_title">Restore Factory HW Configuration</string>
+    <string name="reset_Calibartion_sub_title">Restore factory HW configuration setting</string>
+    <string name="reset_Calibartion_title_summary">Restore Factory HW Configuration</string>
+    <string name="reset_Calibartion_key">reset_Calibartion_key</string>
+    <string name="reset_Calibartion_Dlg">The Restore Factory HW Configuration setting is used to reset parameters like calibration and high voltage bias for the installed detector. Situations in which this operation is useful are extremely rare, and the procedure should only be performed by a factory technician.  Contact Berkeley Nucleonics Corporation before performing this operation.</string>
+    <string name="CryStal_Type_title">Scintillator Type</string>
+    <string name="CryStal_Type_Sub_title">Scintillator Type</string>
+    <string name="CryStal_Type_Key">CryStal_Type_Key</string>
+    <string name="CryStal_Type_title_summary">No saved data.</string>
+    <string name="HardwareNameBP">SAMpack</string>
+    <string name="HardwareNameVM">SAMmobile</string>
+    
+    <string name="UpdateCalibrationParameters">This will update calibration parameters based on manual calibration results. Factory default parameters will be erased. Do you want to proceed?</string>
+    <string name="UpdateCalibrationParameters_title">Update Calibration Parameters</string>
+    <string name="OverwriteEnergyCalibration">This procedure will overwrite the existing Energy Calibration\nPlace Cs137 source near detector for calibration.</string>
+    <string name="CompleteEnergyCalibration">Energy Calibration is Complete\nDo you want to save as default Energy Calibration?</string>
+    <string name="ToastEnergyCalibration">New Energy Calibration is saved.</string>
+    <string name="Continue">Continue</string>
+    <string name="Cancel">Cancel</string>
+    <string name="Save">Save</string>
+
+    <string name="camera_area">Photo area</string>
+    <string name="camera_falied">The camera failed to open, try again.</string>
+    <string name="camera_preview_falied">Turning on camera preview failed, try again</string>
+
+    <string name="eventlog_load_failed">Last data.</string>
+
+    <string name="radresponder_sponsor1">SDFD</string>
+    <string name="radresponder_sponsor2">Berkeley Nucleonics</string>
+    <string name="radresponder_sponsor3">San Francisco UASI</string>
+
+</resources>

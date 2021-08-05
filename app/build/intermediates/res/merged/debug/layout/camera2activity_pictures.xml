@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    tools:ignore="missingPrefix"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="false">
+
+    <ImageView
+
+        android:id="@+id/IDIMG_RESULT"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@null"
+        android:scaleType="fitXY"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_toEndOf="@+id/layout1"
+        android:background="#ffffff"
+        android:layout_toRightOf="@+id/layout1">
+
+    </RelativeLayout>
+   <ImageView
+    android:id="@+id/IDIMG_VIDEO"
+    android:layout_width="80dp"
+    android:visibility="gone"
+    android:layout_height="80dp"
+
+       android:background="@drawable/image_press"
+    android:layout_centerInParent="true"
+    android:clickable="false"
+    android:src="@drawable/play"/>
+
+
+    <LinearLayout
+        android:id="@+id/layout1"
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1"
+        android:background="@drawable/bg_gradient"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/IDBTN_RETRY"
+            android:layout_width="0dp"
+            android:text="RETRY"
+            android:layout_weight="0.5"
+            android:background="@drawable/image_press"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:text="OK"
+            android:id="@+id/IDBTN_OK"
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:background="@drawable/image_press"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>

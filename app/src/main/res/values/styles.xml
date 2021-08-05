@@ -1,0 +1,11 @@
+<resources>
+
+<style name="customDialog" parent="android:Theme.Holo.Dialog">
+    <item name="android:windowBackground">@android:color/darker_gray</item>
+</style>
+
+    <style name="AlertDialogTheme" parent="android:Theme.Holo.Dialog">
+        <item name="android:textSize">15dp</item>
+    </style>
+
+</resources>

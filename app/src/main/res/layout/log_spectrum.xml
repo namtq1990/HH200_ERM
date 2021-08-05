@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="horizontal" >
+
+   
+     <view
+         android:id="@+id/LogSpectrum"
+         android:layout_width="fill_parent"
+         android:layout_height="fill_parent"      
+         android:layout_weight="1"        
+         class="android.HH100.Control.SpectrumView"  />   
+	
+   
+    
+      <LinearLayout
+         android:orientation="vertical"
+     	  android:layout_width="fill_parent"
+  	 	  android:layout_height="fill_parent"
+  	 	  android:layout_weight="3"
+  	 	 >
+  	 	  <TextView
+  	 	      android:id="@+id/ID_Title"       
+  	 	      android:layout_width="match_parent"
+  	 	      android:layout_height="wrap_content"
+  	 	      android:text="@string/detected_nuclide"
+  	 	      android:textSize="14sp"
+  	 	      android:layout_marginTop="10dp"	   	 	      
+  	 	      android:textColor="@color/BrightBlue"/>
+        
+         
+  	       <View        
+   	 	      android:layout_width="fill_parent"
+   	 	      android:layout_height="10dp"
+   	 	      
+   	 	      />
+  	 	  <ListView
+             android:id="@+id/EventLog_ID_List"	          	
+             android:layout_width="fill_parent"	
+             android:layout_height="match_parent"
+             android:longClickable="true"    
+              />
+       
+      </LinearLayout>
+     
+   
+</LinearLayout>

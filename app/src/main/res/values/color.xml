@@ -1,0 +1,11 @@
+<!--?xml version="1.0" encoding="utf-8"?-->
+<resources>
+    <color name="pressed">#4D5052</color>
+    <color name="nonpressed">#6E184F</color>
+     <color name="pressed1">#626262</color>
+    <color name="nonpressed1">#161615</color>
+
+    <color name="colorPrimary">#FFC107</color>
+    <color name="colorPrimaryDark">#FFA000</color>
+    <color name="colorAccent">#3D98FF</color>
+</resources>

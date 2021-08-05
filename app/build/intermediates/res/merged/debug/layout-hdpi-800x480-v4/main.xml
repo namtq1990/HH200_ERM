@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:id="@+id/panel_layou2t2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="1" >
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/DarkGray" >
+
+                <TextView
+                    android:id="@+id/n1st_row_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:paddingLeft="3dp"
+                    android:paddingTop="3dp"
+                    android:text="@string/Paired"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/n1st_row_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:paddingRight="3dp"
+                    android:paddingTop="3dp"
+                    android:text="@string/library"
+                    android:textSize="12sp" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/DarkGray" >
+
+                <TextView
+                    android:id="@+id/n1st_row_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:paddingLeft="3dp"
+                    android:text="None"
+                    android:textColor="@color/White"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/n1st_row_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:paddingRight="3dp"
+                    android:text="None"
+                    android:textColor="@color/White"
+                    android:textSize="14sp" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/DarkGray2" >
+
+                <TextView
+                    android:id="@+id/n2nd_row_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:paddingLeft="3dp"
+                    android:paddingTop="3dp"
+                    android:text="@string/alarm_mode"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/n2nd_row_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:paddingRight="3dp"
+                    android:paddingTop="3dp"
+                    android:text="@string/sam_battery"
+                    android:textSize="12sp" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/DarkGray2" >
+
+                <TextView
+                    android:id="@+id/n2nd_row_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:paddingLeft="3dp"
+                    android:text="@string/fixed"
+                    android:textColor="@color/White"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/n2nd_row_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:paddingRight="3dp"
+                    android:text="0 %"
+                    android:textColor="@color/White"
+                    android:textSize="14sp" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/DarkGray" >
+
+                <TextView
+                    android:id="@+id/n3rd_row_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:paddingLeft="3dp"
+                    android:paddingTop="3dp"
+                    android:text="@string/login"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/n3rd_row_2"
+                    android:layout_width="wrap_content"
+                    android:gravity="right"
+                    android:paddingRight="3dp"
+                    android:paddingTop="3dp"
+                    android:text="@string/neutron"
+                    android:textSize="12sp" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/DarkGray" >
+
+                <TextView
+                    android:id="@+id/n3rd_row_3"
+                    android:layout_width="wrap_content"
+                    android:layout_column="1"
+                    android:paddingLeft="3dp"
+                    android:textColor="@color/White"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/n3rd_row_4"
+                    android:gravity="right"
+                    android:paddingRight="3dp"
+                    android:text="None"
+                    android:textColor="@color/White"
+                    android:textSize="14sp" />
+            </TableRow>
+        </TableLayout>
+
+        <ImageView
+            android:id="@+id/bluetoothStatus2"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_gravity="center"
+            android:src="@drawable/bluetooth_bg" />
+
+        <ImageView
+            android:id="@+id/bluetoothStatus"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_gravity="center"
+            android:src="@drawable/bluetooth_bg" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/pannel_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" 
+       >
+
+        <!--
+             <TextView android:textAppearance="?android:attr/textAppearanceMedium"
+			android:layout_gravity="center|right" android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:background="@drawable/name_panel" android:textColor="@color/Black"
+			android:text="        Neutron" android:id="@+id/T_neutron" android:textSize="7pt" android:layout_marginBottom="350px"></TextView>
+			-
+        -->
+
+        <ImageView
+            android:id="@+id/I_NeutronPanel"
+            android:layout_width="330dp"
+            android:layout_height="330dp"
+            android:layout_gravity="center|top"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/panel_bg2"
+            android:visibility="invisible" >
+        </ImageView>
+
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left|top"
+            android:text="Gain Stabilization"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/WhiteGray"
+            android:textSize="11sp"
+            android:visibility="visible" />
+
+		<TextView
+		    android:id="@+id/MainPannel"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:gravity="center"
+		    android:paddingBottom="2dp"
+		    android:paddingTop="7dp"
+		    android:text="@string/gauge"
+		    android:textAppearance="?android:attr/textAppearanceLarge"
+		    android:textColor="@color/orange"
+		    android:textSize="16sp"
+		    android:textStyle="bold"
+		    android:visibility="visible" />
+        
+        <TextView
+            android:id="@+id/tv_GM"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textSize="13sp" />
+
+        <ViewFlipper
+            android:id="@+id/MainFlipper"
+            android:layout_width="fill_parent"
+            android:layout_height="330dp"
+            android:layout_gravity="center" 
+            >
+
+            <FrameLayout
+                android:id="@+id/MainFlip1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <ImageView
+                    android:id="@+id/I_GammaPanel"
+                    android:layout_width="330dp"
+                    android:layout_height="330dp"
+                    android:layout_gravity="center|top"
+                    android:layout_marginTop="-20dp"
+                    android:background="@drawable/panel_bg2" />
+
+                <view
+                    android:id="@+id/Gamma_guage_panel"
+                    android:layout_width="330dp"
+                    android:layout_height="330dp"
+                    android:layout_gravity="center|top"
+                    android:layout_marginTop="-20dp"
+                    class="android.HH100.Control.GuageView" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/MainFlip2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"                
+                android:layout_gravity="center|top">
+
+                <view
+                    android:id="@+id/MainFinder"
+                    android:layout_width="fill_parent"
+                    android:layout_height="250dp"   
+                    class="android.HH100.Control.RealActivitySpectrumView" />
+            </FrameLayout>
+
+           
+        </ViewFlipper>
+
+        <Button
+            android:id="@+id/start"
+            android:layout_width="210dp"
+            android:layout_height="60dp"
+            android:layout_gravity="right|bottom"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/id_mode"
+            android:soundEffectsEnabled="true" >
+        </Button>
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_gravity="bottom|left"
+            android:layout_marginBottom="30dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/bnc_logo" >
+        </ImageView>
+
+        <View 
+            android:id="@+id/ForeGroundImage"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"/>
+
+        <TextView
+            android:id="@+id/tv_Update"
+            android:layout_gravity="bottom"
+            android:layout_width="800dp"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:visibility="invisible"
+            android:textColor="@color/BrightBlue"
+            android:textStyle="italic"
+            android:singleLine="true"
+            android:maxEms="500"
+            android:text="@string/sw_update_byftp"/>
+    </FrameLayout>
+
+  
+
+</LinearLayout>

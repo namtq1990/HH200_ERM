@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="list_preference_entries">
+        <item>@string/fixed</item>
+        <item>@string/variable</item>
+    </string-array>
+    <string-array name="list_preference_entryvalues">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+    <string-array name="list_pref_alarm">
+        <item>@string/siren</item>
+        <item>@string/morning_call</item>
+        <item>@string/door_bell</item>
+        <item>@string/trumpet</item>
+        <item>@string/telephone_ring</item>
+        <item>@string/beep</item>
+    </string-array>
+    <string-array name="list_pref_alarm_value">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+    <string-array name="list_dose_unit">
+        <item>rem/h</item>
+        <item>Sv/h</item>
+    </string-array>
+    <string-array name="list_dose_unit_value">
+        <item>1</item>
+        <item>0</item>
+    </string-array>
+    <string-array name="list_connect_mode_unit">
+        <item>USB</item>
+        <item>Bluetooth</item>
+    </string-array>
+    <string-array name="list_pref_IsoLib">
+        <item>BNC</item>
+    </string-array>
+    <string-array name="list_pref_eventlist">
+        <item>@string/rad_response_eventlist1</item>
+        <item>@string/rad_response_eventlist2</item>
+    </string-array>
+    <string-array name="list_pref_eventlist_value">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+    <string-array name="list_pref_userornot">
+        <item>@string/rad_response_used</item>
+        <item>@string/rad_response_used_not</item>
+    </string-array>
+    <string-array name="list_pref_userornot_value">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+    <string-array name="list_connect_mode_value">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+    <string-array name="list_pref_isotope_value">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+</resources>

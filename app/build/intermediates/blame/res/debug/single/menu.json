@@ -1,0 +1,42 @@
+[
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\menu\\spectrum_menu_user.xml",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\menu\\spectrum_menu_user.xml"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\menu\\spectrum_menu.xml",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\menu\\spectrum_menu.xml"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\menu\\main_menu2.xml",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\menu\\main_menu2.xml"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\menu\\log_menu_sub.xml",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\menu\\log_menu_sub.xml"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\menu\\main_menu3.xml",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\menu\\main_menu3.xml"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\menu\\id_spc.xml",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\menu\\id_spc.xml"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\menu\\sam_delete.xml",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\menu\\sam_delete.xml"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\menu\\main_menu.xml",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\menu\\main_menu.xml"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\menu\\event_log.xml",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\menu\\event_log.xml"
+    },
+    {
+        "merged": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\build\\intermediates\\res\\merged\\debug\\menu\\log_menu.xml",
+        "source": "D:\\Work\\Android\\HH200\\HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM\\app\\src\\main\\res\\menu\\log_menu.xml"
+    }
+]

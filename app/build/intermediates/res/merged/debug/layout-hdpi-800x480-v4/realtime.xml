@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#161615"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:id="@+id/panel_layou2t2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" >
+
+        <ImageView
+            android:id="@+id/bluetoothStatus2"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_gravity="center"
+            android:src="@drawable/bluetooth_bg"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/bluetoothStatus"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_gravity="center"
+            android:src="@drawable/bluetooth_bg"
+            android:visibility="gone" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/pannel_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:text="Gain Stabilization"
+            android:textColor="@color/WhiteGray"
+            android:textSize="11sp"
+            android:visibility="visible" />
+
+        <!--
+             <TextView android:textAppearance="?android:attr/textAppearanceMedium"
+			android:layout_gravity="center|right" android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:background="@drawable/name_panel" android:textColor="@color/Black"
+			android:text="        Neutron" android:id="@+id/T_neutron" android:textSize="7pt" android:layout_marginBottom="350px"></TextView>
+			-
+        -->
+
+        <ImageView
+            android:id="@+id/I_NeutronPanel"
+            android:layout_width="330dp"
+            android:layout_height="330dp"
+            android:layout_gravity="center|top"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/panel_bg2"
+            android:visibility="invisible" >
+        </ImageView>
+
+        <!--
+                 <TextView
+                android:id="@+id/text222"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-light"
+                android:text="auge"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#838383"
+                android:textSize="18sp"
+                android:visibility="visible" />
+        -->
+
+        <TextView
+            android:id="@+id/MainPannel1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingBottom="2dp"
+            android:paddingTop="7dp"
+            android:text="@string/gauge"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/orange"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_GM"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textSize="13sp" />
+
+        <ViewFlipper
+            android:id="@+id/MainFlipper"
+            android:layout_width="fill_parent"
+            android:layout_height="330dp"
+            android:layout_gravity="center" >
+
+            <FrameLayout
+                android:id="@+id/MainFlip1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="11dp"
+                    android:layout_marginTop="13.5dp"
+                    android:fontFamily="sans-serif-light"
+                    android:text="G"
+                    android:textColor="#838383"
+                    android:textSize="32sp"
+                    android:textStyle="bold"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="33dp"
+                    android:layout_marginTop="23dp"
+                    android:fontFamily="sans-serif-light"
+                    android:text="auge"
+                    android:textColor="#838383"
+                    android:textSize="22sp"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/NeutronTxt"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="45.5dp"
+                    android:layout_marginTop="188.5dp"
+                    android:fontFamily="sans-serif-light"
+                    android:gravity="right"
+                    android:text="0.0"
+                    android:textColor="#ffffff"
+                    android:textSize="32sp"
+                    android:visibility="visible" />
+
+                <TextView
+                      android:id="@+id/NeutronCpsTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="135.5dp"
+                    android:layout_marginTop="205.5dp"
+                    android:fontFamily="sans-serif-light"
+                    android:text=" cps"
+                    android:textColor="#ffffff"
+                    android:textSize="17sp"
+                    android:visibility="visible" />
+
+                <TextView
+                      android:id="@+id/NeutronLineTxt"
+                    android:layout_width="95dp"
+                    android:layout_height="1.7dp"
+                    android:layout_marginLeft="72dp"
+                    android:layout_marginTop="231.5dp"
+                    android:background="@drawable/line"
+                    android:fontFamily="sans-serif-light"
+                    android:textColor="#ffffff"
+                    android:textSize="17sp"
+                    android:visibility="visible" />
+
+                <TextView
+                      android:id="@+id/NeutronUnderNameTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="105dp"
+                    android:layout_marginTop="235.5dp"
+                    android:fontFamily="sans-serif-light"
+                    android:text="Neutron"
+                    android:textColor="@color/WhiteGrayGauge"
+                    android:textSize="17sp"
+                    android:visibility="visible" />
+
+                <ImageView
+                    android:id="@+id/MoveImg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="518.5dp"
+                    android:layout_marginTop="177dp"
+                    android:background="@drawable/msg_forward"
+                    android:scaleType="fitXY"
+                    android:scaleX="1.0"
+                    android:scaleY="1.0" >
+                </ImageView>
+                
+                
+                  <TextView
+                    android:id="@+id/MoveImgTxt"
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="487dp"
+                    android:layout_marginTop="253dp"
+                    android:gravity="center"
+                    android:text="MOVE FORWARD"
+                    android:textColor="@color/WhiteGrayGauge"
+                    android:textSize="14sp"
+                    android:visibility="visible" />
+
+                <ImageView
+                    android:id="@+id/I_GammaPanel"
+                    android:layout_width="330dp"
+                    android:layout_height="330dp"
+                    android:layout_gravity="center|top"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/panel_bg2" />
+
+                <view
+                    android:id="@+id/Gamma_guage_panel"
+                    android:layout_width="330dp"
+                    android:layout_height="330dp"
+                    android:layout_gravity="center|top"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="20dp"
+                    class="android.HH100.Control.GuageView" />
+
+
+                <LinearLayout
+                    android:id="@+id/layoutGM"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:layout_marginTop="32dp"
+                    android:background="@android:color/transparent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/gm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="90dp"
+                        android:fontFamily="sans-serif-light"
+                        android:text="GM"
+                        android:textColor="@color/Brown"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/gmTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="7.5dp"
+                        android:fontFamily="sans-serif-light"
+                        android:gravity="left"
+                        android:text="0.0 "
+                        android:textColor="@color/White"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/MainFlip2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center|bottom"
+                android:layout_marginBottom="30dp"
+                android:layout_marginTop="0dp"
+                android:background="#161615" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="11dp"
+                    android:layout_marginTop="14.5dp"
+                    android:fontFamily="sans-serif-light"
+                    android:text="F"
+                    android:textColor="#838383"
+                    android:textSize="32sp"
+                    android:textStyle="bold"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="29dp"
+                    android:layout_marginTop="25dp"
+                    android:fontFamily="sans-serif-light"
+                    android:text="inder"
+                    android:textColor="#838383"
+                    android:textSize="22sp"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/GaugeViewCpsTxt"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|right"
+                    android:layout_marginRight="44dp"
+                    android:layout_marginTop="23dp"
+                    android:fontFamily="sans-serif-light"
+                    android:gravity="right"
+                    android:text="0"
+                    android:textColor="@color/White"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|right"
+                    android:layout_marginRight="14dp"
+                    android:layout_marginTop="34dp"
+                    android:gravity="center"
+                    android:text="cps"
+                    android:textColor="#AD7D44" />
+
+                <view
+                    android:id="@+id/MainFinder"
+                    android:layout_width="fill_parent"
+                    android:layout_height="250dp"
+                    android:layout_gravity="center|bottom"
+                    class="android.HH100.Control.RealActivitySpectrumView"
+                    android:background="#161615" />
+            </FrameLayout>
+        </ViewFlipper>
+
+        <Button
+            android:id="@+id/start"
+            android:layout_width="210dp"
+            android:layout_height="60dp"
+            android:layout_gravity="right|bottom"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/id_mode"
+            android:soundEffectsEnabled="true"
+            android:visibility="invisible" >
+        </Button>
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_gravity="bottom|left"
+            android:layout_marginBottom="30dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/bnc_logo"
+            android:visibility="invisible" >
+        </ImageView>
+
+        <View
+            android:id="@+id/ForeGroundImage"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="20dp" />
+
+        <TextView
+            android:id="@+id/tv_Update"
+            android:layout_width="800dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:maxEms="500"
+            android:singleLine="true"
+            android:text="@string/sw_update_byftp"
+            android:textColor="@color/BrightBlue"
+            android:textSize="12sp"
+            android:textStyle="italic"
+            android:visibility="invisible" />
+    </FrameLayout>
+
+</LinearLayout>
