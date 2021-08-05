@@ -57,6 +57,7 @@ public class Spectrum implements Serializable {
 	public static int second, second1, second2, second3;
 	public boolean SpecSumMode = false;
 	Vector<NcPeak> peakInfo_bg = new Vector<NcPeak>();
+	private boolean mHasSpectra = false;
 
 	public int HealthSafety_Threshold = 0;
 
@@ -107,6 +108,14 @@ public class Spectrum implements Serializable {
 	public void Set_crystalType(int mcrystalType) {
 
 		crystalType = mcrystalType;
+	}
+
+	public boolean hasSpectra() {
+		return mHasSpectra;
+	}
+
+	public void setHasSpectra(boolean hasSpectra) {
+		this.mHasSpectra = hasSpectra;
 	}
 
 	public int Get_HealthSafety_Threshold() {

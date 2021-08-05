@@ -70,6 +70,8 @@ public class NcLibrary {
 	public static final double CS137_PEAK2 = 661.660;
 	public static final double K40_PEAK = 1461;
 
+	public static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+
 	//Define for K40 finder: Improve GainStabilization
 	//Hung:2018.01.31
 	public static int CHSIZE=1024;

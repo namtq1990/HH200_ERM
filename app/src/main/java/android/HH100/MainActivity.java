@@ -30,6 +30,7 @@ import android.HH100.Structure.NcPeak;
 import android.HH100.Structure.ReadDetectorData;
 import android.HH100.Structure.SingleMediaScanner;
 import android.HH100.Structure.Spectrum;
+import android.HH100.erm_debug.ErmDataManager;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -1596,6 +1597,7 @@ public class MainActivity extends TabActivity
 		mNormalDB.start();
 		mEventDB = new EventDBOper();
 		mEventDB.setHandler(mHandler);
+		ErmDataManager.getInstance().setContext(getApplicationContext());
 
 
 		Check_SwUpdate_OnFTP();
@@ -2353,7 +2355,7 @@ public class MainActivity extends TabActivity
 							mNormalDB.addValue(mDetector.User, mDetector.Location, mDetector.Get_Gamma_DoseRate_nSV(),
 									mDetector.mNeutron.Get_CPS());
 
-
+						addErmData();
 
 					} catch (Exception e) {
 						//NcLibrary.Write_ExceptionLog(e);
@@ -2513,6 +2515,10 @@ public class MainActivity extends TabActivity
 			}
 		}
 	};
+
+	private void addErmData() {
+		ErmDataManager.getInstance().addCurrentSpectra(mDetector);
+	}
 
 	int countCheck = 0;
 	public void CheckCPSIsZero(int CPS, int totalCount)
