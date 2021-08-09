@@ -30,7 +30,7 @@ public class ErmDataManager {
 
     private Context mContext;
     private ErmDBHelper mDBHelper;
-    private long mDuration = 5 * 60000; //default time
+    private long mDuration = 5 * 60000;
     private List<Spectrum> mSpcPerMin;
     private List<Spectrum> mSpcPerDuration;
     private Calendar mMinuteTime;
@@ -55,11 +55,6 @@ public class ErmDataManager {
             e.printStackTrace();
             mDuration = DEFAULT_DURATION;
         }
-    }
-
-    public void setTimeDuration(long dur)
-    {
-        mDuration = dur;
     }
 
     public void addCurrentSpectra(Detector detector) {
@@ -123,6 +118,7 @@ public class ErmDataManager {
                     spc.Set_Spectrum(durationSpc);
                     spc.Set_MeasurementDate(formatSavedTime(now.getTime()));
                     mDBHelper.insertEvent(spc);
+                    deleteOldSpectrum();
                     setTimerFor(mDurationTime, true);
                     mSpcPerDuration.clear();
                 }
@@ -135,13 +131,13 @@ public class ErmDataManager {
         Date now = new Date();
         long time = now.getTime() - 30L * 24L * 3600L * 1000L;
         Date lastMonth = new Date(time);
-        deleteSpectrum(lastMonth, now);
+        deleteSpectrum(null, lastMonth);
     }
 
     public void deleteSpectrum(Date from, Date to) {
         mDBHelper.deleteSpectrum(
-                NcLibrary.DATE_FORMAT.format(from),
-                NcLibrary.DATE_FORMAT.format(to)
+                from != null ? NcLibrary.DATE_FORMAT.format(from) : null,
+                to != null ? NcLibrary.DATE_FORMAT.format(to) : null
         );
     }
 
