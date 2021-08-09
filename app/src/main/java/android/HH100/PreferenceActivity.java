@@ -416,68 +416,6 @@ public class PreferenceActivity extends android.preference.PreferenceActivity im
             }
         });
 
-/*	180605 문구수정
- * 	mResetCalibration.setOnPreferenceClickListener(new OnPreferenceClickListener() {
-
-			@Override
-			public boolean onPreferenceClick(Preference preference) {
-
-				AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(PreferenceActivity.this);
-				dialogBuilder.setTitle(getResources().getString(R.string.reset_Calibartion_sub_title));
-				dialogBuilder.setMessage(getResources().getString(R.string.reset_Calibartion_Dlg));
-				dialogBuilder.setPositiveButton(getResources().getString(R.string.ok),
-						new DialogInterface.OnClickListener() {
-
-							public void onClick(DialogInterface dialog, int whichButton) {
-
-								PreferenceDB mPreb = new PreferenceDB(getApplicationContext());
-
-								// mPreb.Set_Initialization();
-
-								if (mPreb.Get_HW_CaliPeakCh1_From_pref() == 0
-										|| mPreb.Get_HW_CaliPeakCh2_From_pref() == 0) {
-
-									Toast.makeText(getApplicationContext(), "data does not exist", 1).show();
-								} else {
-									Toast.makeText(getApplicationContext(), "success", 1).show();
-
-									double Cal_A, Cal_B, Cal_C, Cal_Ch1, Cal_Ch2, Cal_Ch3;
-
-									Cal_A = mPreb.Get_HW_CaliPeak1_From_pref();
-									Cal_B = mPreb.Get_HW_CaliPeak2_From_pref();
-									Cal_C = mPreb.Get_HW_CaliPeak3_From_pref();
-
-									Cal_Ch1 = mPreb.Get_HW_CaliPeakCh1_From_pref();
-									Cal_Ch2 = mPreb.Get_HW_CaliPeakCh2_From_pref();
-									Cal_Ch3 = mPreb.Get_HW_CaliPeakCh3_From_pref();
-
-									mPreb.Set_Calibration_Result(Cal_A, Cal_B, Cal_C, Cal_Ch1, Cal_Ch2, Cal_Ch3);
-
-									mPreb.Get_Cali_A_From_pref();
-									mPreb.Get_Cali_B_From_pref();
-									mPreb.Get_Cali_C_From_pref();
-
-									Intent send_gs = new Intent(MainBroadcastReceiver.MSG_FIXED_GC_SEND);
-
-									LocalBroadcastManager.getInstance(getApplicationContext()).sendBroadcast(send_gs);
-
-								}
-
-								// OptionDefaultData mDefault = new OptionDefaultData(getApplicationContext());
-								// SetIsotopeList(Integer.parseInt(mDefault.IsoLib_list));
-								//
-								// finish();
-								// startActivity(getIntent());
-							}
-						});
-				dialogBuilder.setNegativeButton("Cancel", null);
-				dialogBuilder.setCancelable(false);
-				dialogBuilder.show();
-
-				return false;
-			}
-		});*/
-
         mInitialization = (PreferenceScreen) findPreference(getString(R.string.initialization_key));
         mInitialization.setOnPreferenceClickListener(new OnPreferenceClickListener() {
 

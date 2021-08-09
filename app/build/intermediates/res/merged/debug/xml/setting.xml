@@ -198,7 +198,7 @@
         </PreferenceCategory>
         <PreferenceCategory android:title="@string/manual_identification" >
             <EditTextPreference
-                android:defaultValue="60"
+                android:defaultValue="300"
                 android:digits="0123456789"
                 android:inputType="number|numberSigned|numberDecimal"
                 android:key="@string/p_manual_id_defalut"
