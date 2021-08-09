@@ -55,7 +55,7 @@ public class TCPServerService extends Service {
 
     Object obj = new Object();
 
-    private static int TimeSequenceSendSpectrum = 300; //5 minutes300
+    public static int TimeSequenceSendSpectrum = 300; //5 minutes300
 
     @Override
     public IBinder onBind(Intent intent) {
@@ -562,15 +562,6 @@ public class TCPServerService extends Service {
                 Thread.sleep(50);
             }
         }
-    }
-
-    public String ToString(double[] _spc) {
-        String result = "";
-
-        for (int i = 0; i < _spc.length; i++) {
-            result += ((int) _spc[i]) + ";";
-        }
-        return result;
     }
 
     double avg_doserate;

@@ -4,6 +4,7 @@ import android.HH100.R;
 import android.HH100.Structure.Detector;
 import android.HH100.Structure.NcLibrary;
 import android.HH100.Structure.Spectrum;
+import android.HH100.TCPServerService;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
@@ -49,11 +50,13 @@ public class ErmDataManager {
     private void loadDurationTime(SharedPreferences pref) {
         try {
             String duration = pref.getString(mContext.getString(R.string.p_manual_id_defalut), "300");
-
             mDuration = Long.parseLong(duration) * 1000;
+
+            TCPServerService.TimeSequenceSendSpectrum = Integer.parseInt(duration);
         } catch (NumberFormatException e) {
             e.printStackTrace();
             mDuration = DEFAULT_DURATION;
+            TCPServerService.TimeSequenceSendSpectrum = 300;
         }
     }
 
