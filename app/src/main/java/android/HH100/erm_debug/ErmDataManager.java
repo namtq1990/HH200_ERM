@@ -30,7 +30,7 @@ public class ErmDataManager {
 
     private Context mContext;
     private ErmDBHelper mDBHelper;
-    private long mDuration = 5 * 60000;
+    private long mDuration = 5 * 60000; //default time
     private List<Spectrum> mSpcPerMin;
     private List<Spectrum> mSpcPerDuration;
     private Calendar mMinuteTime;
@@ -55,6 +55,11 @@ public class ErmDataManager {
             e.printStackTrace();
             mDuration = DEFAULT_DURATION;
         }
+    }
+
+    public void setTimeDuration(long dur)
+    {
+        mDuration = dur;
     }
 
     public void addCurrentSpectra(Detector detector) {

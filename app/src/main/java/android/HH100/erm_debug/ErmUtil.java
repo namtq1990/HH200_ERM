@@ -12,6 +12,7 @@ import org.w3c.dom.Node;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.StringWriter;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -24,11 +25,12 @@ import javax.xml.transform.stream.StreamResult;
 
 public class ErmUtil {
 
-    public static void saveErmXml(Context context, Spectrum[] spectrums) throws IOException {
+    public static StringWriter saveErmXml(Context context, Spectrum[] spectrums) throws IOException {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         InputStream parentTemplate = context.getAssets().open("parent_template.xml");
         InputStream childrenTemplate = context.getAssets().open("children_template.xml");
-        FileOutputStream fout  = new FileOutputStream("/sdcard/test.xml");
+//        FileOutputStream fout  = new FileOutputStream("/sdcard/test.xml");
+        StringWriter swt = new StringWriter();
         try {
             DocumentBuilder builder = factory.newDocumentBuilder();
             Document parentDoc = builder.parse(parentTemplate);
@@ -75,13 +77,18 @@ public class ErmUtil {
             Transformer tf = TransformerFactory.newInstance().newTransformer();
             tf.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
             tf.setOutputProperty(OutputKeys.INDENT, "yes");
-            tf.transform(new DOMSource(parentDoc), new StreamResult(fout));
+//            tf.transform(new DOMSource(parentDoc), new StreamResult(fout));
+            tf.transform(new DOMSource(parentDoc), new StreamResult(swt));
+
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
             parentTemplate.close();
             childrenTemplate.close();
-            fout.close();
+//            String ret = fout.toString();
+//            fout.close();
+
+            return swt;
         }
     }
 }

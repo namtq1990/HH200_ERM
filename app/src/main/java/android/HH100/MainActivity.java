@@ -2623,13 +2623,6 @@ public class MainActivity extends TabActivity
 			byte[] buff = new byte[9];
 			buff[0] = 'D';
 			buff[1] = 'S';
-//		buff[2] = 0x46;
-//		buff[3] = 0x43;
-//		buff[4] = 0x30;
-//		buff[5] = 0x2E;
-//		buff[6] = 0x31;
-//		buff[7] = 0x32;
-//		buff[8] = 0x33;
 
 			buff[2] = 0x46;
 			if (isotopes != null) {
@@ -2684,11 +2677,6 @@ public class MainActivity extends TabActivity
 					+ stackTraceElements[0].getLineNumber();
 
 			NcLibrary.SaveText1(logMessage, "Testdosesent");
-//			FileOutputStream file = new FileOutputStream("Testdosesent");
-//			PrintWriter writer = new PrintWriter(file);
-//			ex.printStackTrace(writer);
-//			writer.close();
-//			file.close();
 		}
 	}
 
