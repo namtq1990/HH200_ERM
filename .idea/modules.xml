@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="ProjectModuleManager">
-    <modules>
-      <module fileurl="file://$PROJECT_DIR$/HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM.iml" filepath="$PROJECT_DIR$/HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM.iml" group="HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="HH200_BNCVersion_SAM III PeakAbout III (v2.1.1)_ERM/app" />
-    </modules>
-  </component>
-</project>

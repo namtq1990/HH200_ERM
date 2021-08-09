@@ -7,6 +7,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.os.Environment;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -16,7 +17,7 @@ import java.util.List;
 public class ErmDBHelper extends SQLiteOpenHelper {
 
     private static final int VERSION = 1;
-    private static final String DB_FILE = "ErmDB.db";
+    private static final String DB_FILE = Environment.getExternalStorageDirectory().getAbsolutePath() + "/SAM/ErmDB.db";
     private static final String TABLE_SPECTRA = "ErmSpectra";
     private static final String COLUMN_SPECTRA_ID = "Id";
     private static final String COLUMN_SPECTRA_TIME = "Time";
@@ -72,8 +73,29 @@ public class ErmDBHelper extends SQLiteOpenHelper {
         mDb.insert(TABLE_SPECTRA, null, values);
     }
 
+    public void deleteSpectrum(String from, String to) {
+        String condition;
+        String[] args;
+        if (from == null && to == null) {
+            condition = null;
+            args = null;
+        } else if (from == null) {
+            condition = String.format("DATETIME(%s) <= DATETIME(?)", COLUMN_SPECTRA_TIME);
+            args = new String[] { to };
+        } else if (to == null) {
+            condition = String.format("DATETIME(%s) >= DATETIME(?)", COLUMN_SPECTRA_TIME);
+            args = new String[] { from };
+        } else {
+            condition = String.format("DATETIME(%s) BETWEEN DATETIME( ? ) AND DATETIME( ? )",
+                    COLUMN_SPECTRA_TIME);
+            args = new String[] { from, to };
+        }
+
+        mDb.delete(TABLE_SPECTRA, condition, args);
+    }
+
     public List<Spectrum> loadSpectra(Date from, Date to) {
-        String[] projection = new String[]{
+        String[] projection = new String[] {
                 COLUMN_SPECTRA_TIME,
                 COLUMN_SPECTRA_DOSERATE,
                 COLUMN_SPECTRA_ACQ_TIME,

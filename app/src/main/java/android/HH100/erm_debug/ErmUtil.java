@@ -1,5 +1,7 @@
 package android.HH100.erm_debug;
 
+import android.HH100.MainActivity;
+import android.HH100.Structure.NcLibrary;
 import android.HH100.Structure.Spectrum;
 import android.content.Context;
 

@@ -1,9 +1,12 @@
 package android.HH100.erm_debug;
 
+import android.HH100.R;
 import android.HH100.Structure.Detector;
 import android.HH100.Structure.NcLibrary;
 import android.HH100.Structure.Spectrum;
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 
 import java.text.ParseException;
 import java.util.ArrayList;
@@ -18,8 +21,10 @@ public class ErmDataManager {
         return ourInstance;
     }
 
+    private static final long DEFAULT_DURATION = 5 * 60000;
+
     private ErmDataManager() {
-        mSpcPerMin = new ArrayList<>(60);
+        mSpcPerMin = new ArrayList<>(65);
         mSpcPerDuration = new ArrayList<>();
     }
 
@@ -30,13 +35,25 @@ public class ErmDataManager {
     private List<Spectrum> mSpcPerDuration;
     private Calendar mMinuteTime;
     private Calendar mDurationTime;
-    private String mMinuteKey;
-    private String mDurationKey;
 
     public void setContext(Context context) {
         this.mContext = context;
         if (mDBHelper == null) {
             mDBHelper = new ErmDBHelper(context);
+            SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
+            pref.registerOnSharedPreferenceChangeListener(mListener);
+            loadDurationTime(pref);
+        }
+    }
+
+    private void loadDurationTime(SharedPreferences pref) {
+        try {
+            String duration = pref.getString(mContext.getString(R.string.p_manual_id_defalut), "300");
+
+            mDuration = Long.parseLong(duration) * 1000;
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+            mDuration = DEFAULT_DURATION;
         }
     }
 
@@ -108,6 +125,21 @@ public class ErmDataManager {
         }
     }
 
+    private void deleteOldSpectrum() {
+        // Delete too old spectrum > 30 month
+        Date now = new Date();
+        long time = now.getTime() - 30L * 24L * 3600L * 1000L;
+        Date lastMonth = new Date(time);
+        deleteSpectrum(lastMonth, now);
+    }
+
+    public void deleteSpectrum(Date from, Date to) {
+        mDBHelper.deleteSpectrum(
+                NcLibrary.DATE_FORMAT.format(from),
+                NcLibrary.DATE_FORMAT.format(to)
+        );
+    }
+
     public Spectrum[] loadSpectrum(Date from, Date to) {
         List<Spectrum> spcs = mDBHelper.loadSpectra(from, to);
         Spectrum[] rs = new Spectrum[spcs.size()];
@@ -127,7 +159,8 @@ public class ErmDataManager {
         if (isDuration) {
             long curMinute = calendar.get(Calendar.MINUTE) * 60 * 1000;
             int count;
-            for (count = 0; curMinute > count * mDuration; count++) {}
+            for (count = 0; curMinute > count * mDuration; count++) {
+            }
             long waitingTime = count * mDuration - curMinute;
             calendar.setTimeInMillis(calendar.getTimeInMillis() + waitingTime);
         }
@@ -158,4 +191,13 @@ public class ErmDataManager {
 
         return rs;
     }
+
+    private SharedPreferences.OnSharedPreferenceChangeListener mListener = new SharedPreferences.OnSharedPreferenceChangeListener() {
+        @Override
+        public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+            if (key.equals(mContext.getString(R.string.p_manual_id_defalut))) {
+                loadDurationTime(sharedPreferences);
+            }
+        }
+    };
 }
