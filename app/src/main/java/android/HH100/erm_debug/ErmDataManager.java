@@ -61,72 +61,78 @@ public class ErmDataManager {
     }
 
     public void addCurrentSpectra(Detector detector) {
-        Spectrum spc = new Spectrum();
-        Calendar now = Calendar.getInstance();
-        now.set(Calendar.MILLISECOND, 0);
-        String date = NcLibrary.DATE_FORMAT.format(now.getTime());
-        spc.Set_Spectrum(detector.MS);
-        spc.Set_MeasurementDate(date);
-        spc.Set_mGammaDoserate(detector.Get_Gamma_DoseRate_nSV());
-        spc.Set_Coefficients(detector.Coeffcients);
-        spc.mAcqTime = 1;
+        try {
+            Spectrum spc = new Spectrum();
+            Calendar now = Calendar.getInstance();
+            now.set(Calendar.MILLISECOND, 0);
+            String date = NcLibrary.DATE_FORMAT.format(now.getTime());
+            spc.Set_Spectrum(detector.MS);
+            spc.Set_MeasurementDate(date);
+            spc.Set_mGammaDoserate(detector.Get_Gamma_DoseRate_nSV());
+            spc.Set_Coefficients(detector.Coeffcients);
+            spc.mAcqTime = 1;
 
-        if (mMinuteTime == null) {
-            mMinuteTime = Calendar.getInstance();
-            setTimerFor(mMinuteTime, false);        // After 60s
-        }
-        if (mDurationTime == null) {
-            mDurationTime = Calendar.getInstance();
-            setTimerFor(mDurationTime, true);
-        }
-
-        if (now.before(mMinuteTime)) {
-            mSpcPerMin.add(spc);
-        } else {
-            long timeAmount = 0;
-            boolean resetTempSpc = false;
-            try {
-                timeAmount = getDurationBetween(mSpcPerMin.get(0), spc);
-                resetTempSpc = timeAmount > 61 * 1000;
-            } catch (Exception e) {
-                e.printStackTrace();
-                resetTempSpc = true;
+            if (mMinuteTime == null) {
+                mMinuteTime = Calendar.getInstance();
+                setTimerFor(mMinuteTime, false);        // After 60s
             }
-            if (resetTempSpc) {
-                // Validate that is same minute
-                // This 2 spectrum isn't same minute, so ignore before
-                mSpcPerMin.clear();
-                mSpcPerMin.add(spc);
-                mSpcPerDuration.clear();
-                setTimerFor(mMinuteTime, false);
+            if (mDurationTime == null) {
+                mDurationTime = Calendar.getInstance();
                 setTimerFor(mDurationTime, true);
-                return;
             }
 
-            mSpcPerMin.add(spc);
-            Spectrum minuteSpc = computeTotalSpc(mSpcPerMin);
-            setTimerFor(mMinuteTime, false);
-            mSpcPerMin.clear();
-            if (minuteSpc != null) {
-                if (now.before(mDurationTime)) {
-                    spc.Set_Spectrum(minuteSpc);
-                    spc.setHasSpectra(false);
-                    spc.Set_MeasurementDate(formatSavedTime(now.getTime()));
-                    mDBHelper.insertEvent(spc);
-                    mSpcPerDuration.add(spc);
-                } else {
-                    mSpcPerDuration.add(minuteSpc);
-                    Spectrum durationSpc = computeTotalSpc(mSpcPerDuration);
-                    spc.setHasSpectra(true);
-                    spc.Set_Spectrum(durationSpc);
-                    spc.Set_MeasurementDate(formatSavedTime(now.getTime()));
-                    mDBHelper.insertEvent(spc);
-                    deleteOldSpectrum();
-                    setTimerFor(mDurationTime, true);
+            if (now.before(mMinuteTime)) {
+                mSpcPerMin.add(spc);
+            } else {
+                long timeAmount = 0;
+                boolean resetTempSpc = false;
+                try {
+                    timeAmount = getDurationBetween(mSpcPerMin.get(0), spc);
+                    resetTempSpc = timeAmount > 61 * 1000;
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    resetTempSpc = true;
+                }
+                if (resetTempSpc) {
+                    // Validate that is same minute
+                    // This 2 spectrum isn't same minute, so ignore before
+                    mSpcPerMin.clear();
+                    mSpcPerMin.add(spc);
                     mSpcPerDuration.clear();
+                    setTimerFor(mMinuteTime, false);
+                    setTimerFor(mDurationTime, true);
+                    return;
+                }
+
+                mSpcPerMin.add(spc);
+                Spectrum minuteSpc = computeTotalSpc(mSpcPerMin);
+                setTimerFor(mMinuteTime, false);
+                mSpcPerMin.clear();
+                if (minuteSpc != null) {
+                    if (now.before(mDurationTime)) {
+                        spc.Set_Spectrum(minuteSpc);
+                        spc.setHasSpectra(false);
+                        spc.Set_MeasurementDate(formatSavedTime(now.getTime()));
+                        mDBHelper.insertEvent(spc);
+                        mSpcPerDuration.add(spc);
+                    } else {
+                        mSpcPerDuration.add(minuteSpc);
+                        Spectrum durationSpc = computeTotalSpc(mSpcPerDuration);
+                        spc.setHasSpectra(true);
+                        spc.Set_Spectrum(durationSpc);
+                        spc.Set_MeasurementDate(formatSavedTime(now.getTime()));
+                        mDBHelper.insertEvent(spc);
+                        deleteOldSpectrum();
+                        setTimerFor(mDurationTime, true);
+                        mSpcPerDuration.clear();
+                    }
                 }
             }
+        } catch (Exception e) {
+            NcLibrary.SaveText("ErmData saving error", "ERMLogging", true);
+            e.printStackTrace();
         }
+
     }
 
     private void deleteOldSpectrum() {

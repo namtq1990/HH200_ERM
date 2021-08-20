@@ -2312,7 +2312,7 @@ public class MainActivity extends TabActivity
 							mNormalDB.addValue(mDetector.User, mDetector.Location, mDetector.Get_Gamma_DoseRate_nSV(),
 									mDetector.mNeutron.Get_CPS());
 
-
+						addErmData();
 
 					} catch (Exception e) {
 						//NcLibrary.Write_ExceptionLog(e);
