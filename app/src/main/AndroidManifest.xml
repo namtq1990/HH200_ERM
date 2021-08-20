@@ -4,12 +4,7 @@
     package="android.HH100"
     android:installLocation="auto"
     android:versionCode="1"
-    android:versionName="2.1.1" >
-    <!--20.10.09 bp : 2.0.12 peakabout 2.0.10-->
-    <!--20.01.15 bp : 2.0.13 peakabout 2.0.10-->
-    <!--20.01.23 bp : 2.0.14 peakabout 2.0.12-->
-    <!--20.02.10 bp ,peakabout 2.1.0-->
-    <!--20.03.12 bp ,peakabout 2.1.1-->
+    android:versionName="2.1.2" >
 
     <uses-feature android:name="android.hardware.usb.accessory" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />

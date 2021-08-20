@@ -253,9 +253,6 @@ public class TCPServerService extends Service {
                                 }
                             }
 
-//                            Log.i("TuanPA", "data start: " + start);
-//                            Log.i("TuanPA", "data end: " + end);
-
                             SendPastData(start,end);
                         }
                     }
@@ -340,7 +337,6 @@ public class TCPServerService extends Service {
                 Vector<Isotope> isotopes = new Vector<>();
                 String Spctemp = "";
                 if (!spcAccumulation.IsAccumulateSpc()) {
-                    //Spctemp = "0;0;0;0;0;33;230;487;525;507;559;598;639;696;743;893;952;1000;1091;1326;1396;1570;1650;1826;1848;1828;1936;1958;2057;2111;2122;2176;2077;2093;2001;2163;2141;2117;2157;2086;2017;2050;1990;1910;2018;1846;1764;1746;1693;1698;1669;1688;1609;1600;1573;1578;1463;1537;1494;1425;1391;1341;1316;1262;1303;1206;1185;1194;1193;1180;1194;1184;1192;1257;1202;1202;1085;1087;971;1002;895;874;826;795;777;835;794;771;728;774;768;709;676;765;698;675;646;583;599;623;573;595;575;592;550;563;591;549;590;571;608;591;570;545;497;506;443;464;389;382;373;401;341;361;342;363;331;330;343;343;354;284;300;304;292;290;304;274;256;284;265;267;263;312;270;268;265;268;225;242;291;290;269;247;241;256;263;259;263;224;232;255;237;253;231;228;231;232;234;229;218;227;216;177;215;202;231;215;215;207;248;225;208;240;236;257;276;254;268;282;270;273;279;280;273;241;249;247;224;203;227;190;183;173;163;156;146;143;144;117;151;141;144;129;119;122;111;140;128;129;120;123;133;121;118;116;125;124;113;125;114;114;129;124;110;96;111;118;134;110;123;114;120;125;116;112;118;120;106;114;110;96;117;112;106;113;105;94;97;95;103;86;101;89;93;82;104;94;99;100;97;88;104;79;94;86;87;95;86;102;84;110;79;83;111;102;107;106;113;111;117;129;103;102;98;121;117;104;97;113;118;102;101;116;94;97;115;121;93;90;104;104;105;84;83;79;74;70;69;65;62;74;67;68;69;53;62;73;55;64;64;54;56;64;41;66;48;50;67;61;57;58;64;49;49;78;49;63;74;85;71;73;71;65;75;86;73;70;75;66;79;61;52;78;78;65;67;74;72;67;61;67;53;51;60;57;33;51;46;42;45;50;56;55;52;46;48;36;51;55;50;43;46;40;38;56;50;58;52;41;53;41;30;48;30;49;41;41;34;40;37;38;37;28;32;43;44;30;36;33;33;32;29;22;39;31;29;17;31;34;32;30;23;25;33;36;36;37;28;45;34;51;51;49;46;49;42;56;43;47;60;63;67;74;64;69;72;78;81;80;103;107;109;119;114;121;93;128;122;98;101;108;81;94;82;87;102;82;79;64;62;60;37;54;38;38;29;27;39;39;25;24;24;25;24;31;18;25;29;19;14;20;24;16;12;20;15;28;13;14;26;20;19;30;16;24;24;20;20;25;21;26;15;10;14;19;16;18;13;18;12;12;14;12;17;23;17;11;14;18;21;18;17;23;16;11;18;18;18;15;22;23;26;23;21;28;20;23;32;34;24;18;16;23;16;32;17;28;23;27;17;30;25;21;19;21;20;15;27;21;12;16;18;16;17;9;19;15;21;18;9;11;16;13;23;14;9;9;13;9;8;11;13;10;7;3;14;7;18;5;9;8;6;13;6;14;12;15;14;9;14;13;10;13;3;7;9;9;9;12;8;9;13;7;12;11;8;6;10;7;12;5;11;9;5;5;5;14;8;10;12;10;9;6;5;8;10;10;13;7;15;15;10;7;9;11;11;10;15;12;7;15;6;18;15;17;11;12;12;15;19;10;14;11;7;14;10;11;16;10;11;17;13;16;13;7;18;14;6;18;10;12;13;9;12;16;14;7;12;14;11;5;9;6;13;7;10;13;12;9;16;6;19;9;8;8;8;5;11;9;11;4;6;3;7;9;9;7;5;8;6;6;10;4;6;9;7;3;4;5;7;2;8;9;6;7;11;7;4;8;3;10;4;5;9;5;7;2;8;4;5;5;3;5;7;1;0;2;4;3;4;2;4;7;4;6;4;4;2;3;1;3;3;2;6;1;3;4;6;6;3;8;5;5;4;3;6;10;7;4;8;4;6;14;12;15;11;8;11;10;19;21;23;16;14;22;23;18;19;20;13;27;17;14;24;17;21;9;16;23;19;21;16;15;15;10;10;8;16;12;9;10;13;3;8;5;6;4;6;8;5;5;4;3;2;4;1;2;1;1;1;2;2;0;2;3;0;0;2;1;0;0;1;0;1;0;0;1;0;0;0;1;0;3;0;0;1;1;0;0;0;1;1;4;0;0;0;0;0;0;0;0;0;0;0;0;0;2;0;1;0;0;0;1;0;0;0;1;0;0;0;0;0;0;0;1;1;0;0;0;0;0;0;0;1;1;0;0;0;0;0;0;1;0;1;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;2;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;";
 
                     Spctemp = spcAccumulation.ToStringSpc();
 
@@ -567,9 +563,9 @@ public class TCPServerService extends Service {
     double avg_doserate;
     Coefficients EnCoeff_Cali;
 
-    SpectrumAccumulation spcAccumulation = new SpectrumAccumulation(TimeSequenceSendSpectrum);
-    SpectrumAccumulation spcAccumulation_1m = new SpectrumAccumulation(60);
-    SpectrumAccumulation spcAccumulation_5s = new SpectrumAccumulation(5);
+    SpectrumAccumulation spcAccumulation = new SpectrumAccumulation();
+//    SpectrumAccumulation spcAccumulation_1m = new SpectrumAccumulation(60);
+//    SpectrumAccumulation spcAccumulation_5s = new SpectrumAccumulation(5);
 
     class ServiceReceiver extends BroadcastReceiver {
 
@@ -593,8 +589,8 @@ public class TCPServerService extends Service {
                             double[] tempSpc = MainActivity.mDetector.MS.ToDouble();
 
                             spcAccumulation.Accumulate(tempSpc);
-                            spcAccumulation_1m.Accumulate(tempSpc);
-                            spcAccumulation_5s.Accumulate(tempSpc);
+//                            spcAccumulation_1m.Accumulate(tempSpc);
+//                            spcAccumulation_5s.Accumulate(tempSpc);
 
                             break;
                         }
@@ -606,11 +602,10 @@ public class TCPServerService extends Service {
     }
 
     class SpectrumAccumulation {
-        public SpectrumAccumulation(int timeAccu) {
+        public SpectrumAccumulation() {
             accumulateSPC = true;
             mSPC_Accumulattion = new double[1024];
             countData = 0;
-            timeAccumulate = timeAccu;
         }
 
         public void InitAccumulate() {
@@ -627,7 +622,7 @@ public class TCPServerService extends Service {
             if (accumulateSPC) {
                 countData = countData + 1;
 
-                if (countData >= timeAccumulate) {
+                if (countData >= TimeSequenceSendSpectrum) {
                     accumulateSPC = false;
                 } else {
                     for (int i = 0; i < spc.length; i++) {
@@ -683,6 +678,6 @@ public class TCPServerService extends Service {
 
         private Boolean accumulateSPC;
         private int countData;
-        private int timeAccumulate;
+        //private int timeAccumulate;
     }
 }

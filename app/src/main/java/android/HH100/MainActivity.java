@@ -1600,7 +1600,7 @@ public class MainActivity extends TabActivity
 		ErmDataManager.getInstance().setContext(getApplicationContext());
 
 
-		Check_SwUpdate_OnFTP();
+		//Check_SwUpdate_OnFTP();
 		audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 		mAlarmSound = MediaPlayer.create(this, R.raw.beep1);
 
@@ -2524,25 +2524,6 @@ public class MainActivity extends TabActivity
 	public void CheckCPSIsZero(int CPS, int totalCount)
 	{
 		countCheck = countCheck + 1;
-//
-//		NcLibrary.SaveText1("Receive spectrum", "CheckCPS");
-//
-//		if(countCheck >=5)
-//		{
-//			NcLibrary.SaveText1("Test reset after 5 times receive CPS", "CheckCPS");
-//
-//			MainActivity.SendU4AA();
-//
-//			Timer TimerSendReset = new Timer();
-//			TimerSendReset.schedule(new TimerTask() {
-//				@Override
-//				public void run() {
-//					MainActivity.SendU2AA();
-//				}
-//			}, 500);
-//
-//			countCheck = 0;
-//		}
 
 		if(CPS <=0 && countCheck>=3) {
 			NcLibrary.SaveText1("CPS is 0 in 3 times", "CheckCPS");
@@ -2602,24 +2583,6 @@ public class MainActivity extends TabActivity
 
 			Vector<Isotope> isotopes = mIsoLib2.Find_Isotopes_with_Energy(spc, mDetector.Real_BG);
 
-//		String SumTxt = "";
-//		if (isotopes.size() > 0) {
-//			for (int j = 0; j < isotopes.size(); j++) {
-//				SumTxt = SumTxt + isotopes.get(j).isotopes;
-//				SumTxt = SumTxt + ",";
-//
-//				double ConfidenLevl = isotopes.get(j).Index2 * 100;
-//				SumTxt = SumTxt += Double.toString(ConfidenLevl);
-//
-//				SumTxt = SumTxt + ",";
-//			}
-//		} else SumTxt = "NOFIND";
-//
-//		NcLibrary.SaveText1("SourceID , "+SumTxt+ " Spc"+ spc.ToString()
-//				+"BG"+ MainActivity.mDetector.Real_BG.ToString(),
-//				"Testdosesent");
-
-
 			byte[] buff = new byte[9];
 			buff[0] = 'D';
 			buff[1] = 'S';
@@ -2642,7 +2605,7 @@ public class MainActivity extends TabActivity
 			}
 
 			byte[] bDose = new byte[5];
-			DecimalFormat df = new DecimalFormat("#.####");
+			DecimalFormat df = new DecimalFormat("#.###");
 			df.setRoundingMode(RoundingMode.CEILING);
 			String sDose = df.format(doseValue);
 			byte[] temps = sDose.getBytes(StandardCharsets.US_ASCII);
