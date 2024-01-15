@@ -4262,7 +4262,7 @@ public class NcLibrary {
 
 				GEtemp=GEFactor( en,GECoef);
 
-				temp=ChanelArray1[i]-BGRef[i]*(double)MStime/(double) BGMStime;;
+				temp=ChanelArray1[i]-BGRef[i]/(double) BGMStime;;
 
 				if(temp>Thshld && GEtemp>0)
 				{

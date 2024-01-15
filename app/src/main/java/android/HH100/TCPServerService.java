@@ -141,7 +141,14 @@ public class TCPServerService extends Service {
 
                 StringWriter writer = ErmUtil.saveErmXml(MainActivity.mainContext, ErmDataManager.getInstance().loadSpectrum(startD, stopD));
 
-                SendDataBytes(output, writer);
+                int xmlLength = writer.toString().length();
+
+                // Concatenate "UURT" with the length
+                String dataToSend = "UURT\"" + xmlLength + '\"'  + writer.toString();
+
+                // NcLibrary.SaveText("Send file: " + writer.toString(), "tcpServerService_file.txt", true);
+                sendPackage(output, dataToSend);
+                //SendDataBytes(output, writer);
                 writer.close();
             }
             catch (Exception ex)
@@ -490,12 +497,36 @@ public class TCPServerService extends Service {
                 }
 
                 //NcLibrary.SaveText("Send file: " + writer.toString(), "tcpServerService_file.txt", true);
+                // Get the length of the XML data in writer
+                int xmlLength = writer.toString().length();
 
-                SendDataBytes(output, writer);
+                // Concatenate "UURT" with the length
+                String dataToSend = "UURT\"" + xmlLength + '\"'  + writer.toString();
+
+               // NcLibrary.SaveText("Send file: " + writer.toString(), "tcpServerService_file.txt", true);
+                sendPackage(output, dataToSend);
             }
         }
+        private void sendPackage(OutputStream out,String message) throws IOException
+        {
+            byte[] buf = message.getBytes();
 
-        private void SendDataBytes(OutputStream out, StringWriter strwr) throws InterruptedException, IOException {
+            Log.d("Hung"," Sending " + message);
+            NcLibrary.SaveText( message, "sendPackage.txt", true);
+
+            int offset = 0;
+            int BUF_SIZE = 1024;
+            while (offset < buf.length) {
+                int lenToWrite = Math.min(BUF_SIZE, buf.length - offset);
+                out.write(buf, offset, lenToWrite);
+                offset += lenToWrite;
+            }
+            out.flush();
+        }
+
+
+        private void SendDataBytes(OutputStream out, StringWriter strwr) throws InterruptedException, IOException
+        {
             SPCDataReadService reader = new SPCDataReadService(strwr);
 
             byte[] rcvBuffList = new byte[10];
