@@ -355,6 +355,8 @@ public class TCPServerService extends Service {
             Date today = new Date();
             String _time =dateFormatter.format(today);
 
+            int MStime=TimeSequenceSendSpectrum;
+
             synchronized (obj) {
                 Vector<Isotope> isotopes = new Vector<>();
                 String Spctemp = "";
@@ -365,6 +367,9 @@ public class TCPServerService extends Service {
 
                     //Get Spectrum
                     spcAccumulation.Set_Spectrum(mSpc.Get_Spectrum());
+
+                    //Get AcqTime
+                    MStime=mSpc.Get_AcqTime();
 
                     Spctemp = spcAccumulation.ToStringSpc();
 
@@ -436,11 +441,11 @@ public class TCPServerService extends Service {
                     serializer.endTag(null, "StartTime");
 
                     serializer.startTag(null, "RealTime");
-                    serializer.text(String.valueOf(TimeSequenceSendSpectrum));
+                    serializer.text(String.valueOf(MStime));
                     serializer.endTag(null, "RealTime");
 
                     serializer.startTag(null, "LiveTime");
-                    serializer.text(String.valueOf(TimeSequenceSendSpectrum));
+                    serializer.text(String.valueOf(MStime));
                     serializer.endTag(null, "LiveTime");
 
                     serializer.startTag(null, "SourceType");

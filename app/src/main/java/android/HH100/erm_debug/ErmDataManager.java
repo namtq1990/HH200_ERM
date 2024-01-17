@@ -113,6 +113,7 @@ public class ErmDataManager {
                         spc.Set_Spectrum(minuteSpc);
                         spc.setHasSpectra(false);
                         spc.Set_MeasurementDate(formatSavedTime(now.getTime()));
+                        spc.Set_mGammaDoserate(minuteSpc.Get_mGammaDoserate());
                         mDBHelper.insertEvent(spc);
                         mSpcPerDuration.add(spc);
                     } else {
@@ -121,6 +122,7 @@ public class ErmDataManager {
                         spc.setHasSpectra(true);
                         spc.Set_Spectrum(durationSpc);
                         spc.Set_MeasurementDate(formatSavedTime(now.getTime()));
+                        spc.Set_mGammaDoserate(minuteSpc.Get_mGammaDoserate());
                         mDBHelper.insertEvent(spc);
                         deleteOldSpectrum();
                         setTimerFor(mDurationTime, true);
