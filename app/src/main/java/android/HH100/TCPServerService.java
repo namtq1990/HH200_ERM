@@ -186,33 +186,7 @@ public class TCPServerService extends Service {
                     output = socket.getOutputStream();
 
                     while (isRunning) {
-//                        byte[] buf = new byte[4];
-//
-//                        int offset = 0;
-//                        int recvDataSize = 0;
-//                        int leftDataSize = 4;
-//
-//                        while (leftDataSize > 0) {
-//
-//                            recvDataSize = input.read(buf, offset, leftDataSize);
-//                            if (recvDataSize < 0) {
-//                                NcLibrary.SaveText("RecvDataSize < 0, Need reset socket", "tcpServerService.txt", true);
-//                                if (socket != null) {
-//                                    try {
-//                                        input.close();
-//                                        output.close();
-//                                        socket.close();
-//                                        AcceptConnection();
-//                                        return;
-//                                    } catch (IOException e) {
-//                                        NcLibrary.Write_ExceptionLog(e.getMessage());
-//                                    }
-//                                }
-//                            }
-//
-//                            offset += recvDataSize;
-//                            leftDataSize -= recvDataSize;
-//                        }
+
                         int readByte = input.read();
                         if (readByte == -1)
                             break;
@@ -335,7 +309,7 @@ public class TCPServerService extends Service {
         private void ResetSocket() {
             if (socket != null) {
                 try {
-                    NcLibrary.SaveText("ResetSocket", "tcpServerService.txt", true);
+                    NcLibrary.SaveText("ResetSocket", "sendPackage.txt", true);
 
                     input.close();
                     output.close();
@@ -539,7 +513,7 @@ public class TCPServerService extends Service {
             byte[] buf = message.getBytes();
 
             Log.d("Hung"," Sending " + message);
-            NcLibrary.SaveText( message, "sendPackage.txt", true);
+           // NcLibrary.SaveText( message, "sendPackage.txt", true);
 
             int offset = 0;
             int BUF_SIZE = 1024;
