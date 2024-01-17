@@ -4,7 +4,7 @@
     package="android.HH100"
     android:installLocation="auto"
     android:versionCode="1"
-    android:versionName="2.1.2" >
+    android:versionName="2.1.4" >
 
     <uses-feature android:name="android.hardware.usb.accessory" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />

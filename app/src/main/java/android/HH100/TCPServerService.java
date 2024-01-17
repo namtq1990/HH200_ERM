@@ -33,6 +33,7 @@ import java.net.Socket;
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Date;
@@ -56,6 +57,16 @@ public class TCPServerService extends Service {
     Object obj = new Object();
 
     public static int TimeSequenceSendSpectrum = 300; //5 minutes300
+
+    public static Spectrum mSpc = new Spectrum();
+    public static void SetSpectrum(Spectrum Spc)
+    {
+        mSpc = Spc;
+    }
+    public static Spectrum GetSpectrum() {
+        return mSpc;
+    }
+
 
     @Override
     public IBinder onBind(Intent intent) {
@@ -164,7 +175,11 @@ public class TCPServerService extends Service {
             if (serverSocket != null) {
                 try {
                     socket = null;
+
+                    NcLibrary.SaveText( "Socket:: Listening ", "sendPackage.txt", true);
                     socket = serverSocket.accept();
+                    NcLibrary.SaveText( "Socket:: Listening Success ", "sendPackage.txt", true);
+
                     socket.setSoTimeout(30000);
 
                     input = socket.getInputStream();
@@ -338,18 +353,25 @@ public class TCPServerService extends Service {
             DateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             dateFormatter.setLenient(false);
             Date today = new Date();
-            String _time = dateFormatter.format(today);
+            String _time =dateFormatter.format(today);
 
             synchronized (obj) {
                 Vector<Isotope> isotopes = new Vector<>();
                 String Spctemp = "";
-                if (!spcAccumulation.IsAccumulateSpc()) {
+                if (!spcAccumulation.IsAccumulateSpc() && mSpc.Get_TotalCount() >0)
+                {
+                    //Get time of last event
+                    _time=spcAccumulation.TimeConvert(mSpc.Get_MesurementDate());
+
+                    //Get Spectrum
+                    spcAccumulation.Set_Spectrum(mSpc.Get_Spectrum());
 
                     Spctemp = spcAccumulation.ToStringSpc();
 
                     isotopes = spcAccumulation.FindIso(EnCoeff_Cali.get_Coefficients());
 
-                    double temp_avg_doserate = spcAccumulation.GenarateDoserate(EnCoeff_Cali.get_Coefficients());
+                    //convert into uSv/h
+                    double temp_avg_doserate = mSpc.Get_mGammaDoserate()/1000.0; //spcAccumulation.GenarateDoserate(EnCoeff_Cali.get_Coefficients());
                     avg_doserate = Math.round(temp_avg_doserate * 1000.0) / 1000.0;
                 }
 
@@ -655,11 +677,14 @@ public class TCPServerService extends Service {
 
                 if (countData >= TimeSequenceSendSpectrum) {
                     accumulateSPC = false;
-                } else {
-                    for (int i = 0; i < spc.length; i++) {
-                        mSPC_Accumulattion[i] += spc[i];
-                    }
                 }
+            }
+        }
+
+        public void Set_Spectrum(double[] spc) {
+            for(int i=0;i<1024;i++)
+            {
+                mSPC_Accumulattion[i]=spc[i];
             }
         }
 
@@ -710,5 +735,32 @@ public class TCPServerService extends Service {
         private Boolean accumulateSPC;
         private int countData;
         //private int timeAccumulate;
+
+        //date format: : 2024-01-17T12:36:00,  convert into 2024-01-17 12:36:00 format\
+        public String TimeConvert(String inputDate )
+        {
+            String formattedDate="";
+            DateFormat inputFormatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+
+            try {
+                // Parse the input string to Date
+                Date date = inputFormatter.parse(inputDate);
+
+                // Define the desired output format
+                DateFormat outputFormatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+                // Format the Date to the desired output format
+                 formattedDate = outputFormatter.format(date);
+
+            } catch (ParseException e)
+            {
+                e.printStackTrace();
+                // Handle the exception appropriately if the input date string is not in the expected format
+            }
+
+            return formattedDate;
+        }
     }
+
+
 }

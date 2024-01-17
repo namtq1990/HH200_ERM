@@ -296,6 +296,10 @@ public class Spectrum implements Serializable {
 		return true;
 	}
 
+	public double [] Get_Spectrum(){
+		return mSPC;
+	}
+
 	public boolean Accumulate_Spectrum(Spectrum spc) {
 
 		SpecSumMode = true;

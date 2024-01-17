@@ -125,6 +125,8 @@ public class ErmDataManager {
                         deleteOldSpectrum();
                         setTimerFor(mDurationTime, true);
                         mSpcPerDuration.clear();
+
+                        TCPServerService.SetSpectrum(spc);
                     }
                 }
             }
